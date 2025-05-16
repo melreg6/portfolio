@@ -94,3 +94,12 @@
   .scroll-btn:hover{
     background-color: hotpink
   }
+
+
+
+  .project-card img {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
