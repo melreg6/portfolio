@@ -68,8 +68,8 @@
   .project-card {
 
     flex: 0 0 auto;
-    width: 200px;
-    height: 150px;
+    width: 10px;
+    height: 20px;
     background-color: aliceblue;
     border: 1px solid #fab0d4;
     border-radius: 10px;
