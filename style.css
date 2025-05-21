@@ -34,6 +34,18 @@
     margin-bottom: 10px;
   }
 
+
+
+  nav {
+
+    font-family: "Pixelify Sans" , sans-serif;
+    font-size: 42px;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+
   #contact a {
 
     color: rgb(8, 54, 135);
