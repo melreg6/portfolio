@@ -50,6 +50,7 @@
 
     color: rgb(8, 54, 135);
     text-decoration: none;
+    text-align: center;
 
 
   }
@@ -57,12 +58,14 @@
   #contact a:hover{
 
     text-decoration: underline;
+
   }
 
   #projects {
 
     padding: 40px;
     text-align: center;
+
   }
 
 
