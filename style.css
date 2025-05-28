@@ -128,14 +128,15 @@
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 20px;
-  margin: 40px auto;
-  max-width: 800px;
-  gap: 20px;
+  padding: 15px;
+  margin: 30px auto;
+  max-width: 650px;
+  gap: 15px;
 }
+  
 .about-image {
-  width: 180px;
-  height: 180px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -146,10 +147,17 @@
   color: #333;
   line-height: 1.5;
   flex: 1;
+  padding: 5px;
 }
+
 .about-text h2 {
   font-family: "Pixelify Sans", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 10px;
+}
+
+.about-text p {
+  font-size: 0.95rem;
+  text-align: center;
 }
   
