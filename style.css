@@ -129,6 +129,8 @@
   padding: 20px;
   margin: 40px auto;
   max-width: 650px;
+  transition: transform 0.2s ease;
+  text-align: center;
 }
 
 .about-card-inner {
