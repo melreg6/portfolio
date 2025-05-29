@@ -2,130 +2,160 @@
 <html lang="en">
 
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
   <meta charset="UTF-8">
   <title>Assistive Eating Utensil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Roboto Mono', monospace;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-family: 'Pixelify Sans', sans-serif;
+      text-align: center;
+      font-weight: 400;
+    }
+
+    a {
+      font-family: 'Pixelify Sans', sans-serif;
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .centered {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    figure {
+      text-align: center;
+      margin: 0 auto 20px;
+    }
+
+    figcaption {
+      font-size: 0.9em;
+      margin-top: 8px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: center;
+    }
+
+    h2, h3 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+    }
+  </style>
 </head>
 
 <body>
-  <h1 style="font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;">%% Assistive Eating Utensil %%</h1>
-</body>
 
-<main>
+  <main>
+    <h1>%% Assistive Eating Utensil %%</h1>
 
-  <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;">&larr; Back to Main</a>
-  <br>
+    <a href="index.html">&larr; Back to Main</a>
 
-  <div style="display: flex; gap: 10px;">
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK210/explosion.png" alt="Image 1" style="width: 400px; height: 400px;">
-      <img src="porfolio_photos/EK210/explosion_2.png" alt="Image 2" style="width: 400px; height: 400px;">
-    </figure>
-    <br>
-  </div>
+    <div class="centered">
+      <img src="porfolio_photos/EK210/explosion.png" alt="Image 1" width="400" height="400">
+      <img src="porfolio_photos/EK210/explosion_2.png" alt="Image 2" width="400" height="400">
+    </div>
 
-  <div>
-    <figure style="text-align: center;">
+    <figure>
       <video width="400" controls>
         <source src="porfolio_photos/EK210/210_vid.mp4" type="video/mp4">
         Your browser does not support HTML video.
       </video>
     </figure>
-  </div>
 
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK210/materials.png" style="width:600px;">
+    <figure>
+      <img src="porfolio_photos/EK210/materials.png" width="600">
     </figure>
-  </div>
 
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Key Specifications</h2>
-  <ul style="font-family: 'Roboto Mono', sans-serif; text-align: center; list-style: none; padding: 0;">
-    <li>6 oz total weight</li>
-    <li>2.6 hour operating time</li>
-    <li>194 mA current draw</li>
-    <li>9V battery</li>
-    <li>10.5 × 1.875 × 2.125 inches</li>
-  </ul>
+    <h2>Key Specifications</h2>
+    <ul>
+      <li>6 oz total weight</li>
+      <li>2.6 hour operating time</li>
+      <li>194 mA current draw</li>
+      <li>9V battery</li>
+      <li>10.5 × 1.875 × 2.125 inches</li>
+    </ul>
 
-  <!-- Portfolio Writeup Inserted Here -->
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Mechanically Actuated Assistive Eating Utensil</h2>
+    <h2>Mechanically Actuated Assistive Eating Utensil</h2>
 
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    <strong>Team Project | EK210 Design Project</strong><br>
-    Role: Co-designer, Programmer, Tester
-  </h3>
+    
 
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    Designed a portable, servo-actuated eating utensil to assist individuals with reduced dexterity or involuntary hand movements. The device stabilizes the utensil head using real-time motion data from an accelerometer, helping users eat with greater control and independence.
-  </h3>
+    <h3>
+      Designed a portable, servo-actuated eating utensil to assist individuals with reduced dexterity or involuntary hand movements.
+      The device stabilizes the utensil head using real-time motion data from an accelerometer, helping users eat with greater control and independence.
+    </h3>
 
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    <strong>Key Features</strong><br>
-    - Adafruit ADXL343 accelerometer and Arduino Nano for real-time motion sensing<br>
-    - Dual servo motors mounted perpendicularly to adjust pitch and roll<br>
-    - Compact housing with 3D-printed structure and secure hand strap<br>
-    - Easy-access battery cap and large, user-friendly activation button<br>
-  </h3>
+    <h3><strong>Key Features</strong><br>
+      - Adafruit ADXL343 accelerometer and Arduino Nano for real-time motion sensing<br>
+      - Dual servo motors mounted perpendicularly to adjust pitch and roll<br>
+      - Compact housing with 3D-printed structure and secure hand strap<br>
+      - Easy-access battery cap and large, user-friendly activation button
+    </h3>
 
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    <strong>Performance Metrics</strong><br>
-    - 76% reliability in motion counteraction (roll), 100% in pitch<br>
-    - Runtime: 2.6 hours on 9V battery<br>
-    - Weight: 6.0 oz<br>
-    - Cost: $86.25 (under $100 target)<br>
-    - Not food-safe (PLA material); waterproofing and material upgrades planned
-  </h3>
+    <h3><strong>Performance Metrics</strong><br>
+      - 76% reliability in motion counteraction (roll), 100% in pitch<br>
+      - Runtime: 2.6 hours on 9V battery<br>
+      - Weight: 6.0 oz<br>
+      - Cost: $86.25 (under $100 target)<br>
+      - Not food-safe (PLA material); waterproofing and material upgrades planned
+    </h3>
 
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    <strong>Technical Contributions</strong><br>
-    - Developed Arduino control logic to convert accelerometer data into servo motion<br>
-    - Filtered motion input to reduce reaction to voluntary movements<br>
-    - Assisted in sensor integration and dual-accelerometer testing<br>
-  </h3>
+    <h3><strong>Technical Contributions</strong><br>
+      - Developed Arduino control logic to convert accelerometer data into servo motion<br>
+      - Filtered motion input to reduce reaction to voluntary movements<br>
+      - Assisted in sensor integration and dual-accelerometer testing
+    </h3>
 
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    <strong>Lessons Learned</strong><br>
-    - Adapted to hardware and sensor constraints by switching from MPU6050 to ADXL343<br>
-    - Gained experience in collaborative design, time management, and iterative testing<br>
-    - Learned to balance accessibility, performance, and design trade-offs in engineering
-  </h3>
-  <!-- End of Portfolio Writeup -->
+    <h3><strong>Lessons Learned</strong><br>
+      - Adapted to hardware and sensor constraints by switching from MPU6050 to ADXL343<br>
+      - Gained experience in collaborative design, time management, and iterative testing<br>
+      - Learned to balance accessibility, performance, and design trade-offs in engineering
+    </h3>
 
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK210/glassbox.png" style="width:600px;">
+    <figure>
+      <img src="porfolio_photos/EK210/glassbox.png" width="600">
     </figure>
-  </div>
 
-  <div style="display: flex; gap: 10px;">
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK210/pitchbar.png" alt="Image 1" style="width: 400px;">
-      <img src="porfolio_photos/EK210/rollbar.png" alt="Image 2" style="width: 400px;">
-      <figcaption>Achieved 100% pitch accuracy and 76% roll rate using MPU6050 motion sensor.</figcaption>
+    <div class="centered">
+      <img src="porfolio_photos/EK210/pitchbar.png" width="400" alt="Pitch Accuracy">
+      <img src="porfolio_photos/EK210/rollbar.png" width="400" alt="Roll Rate">
+    </div>
+    <p style="text-align:center; font-size: 0.9em;">
+      Achieved 100% pitch accuracy and 76% roll rate using MPU6050 motion sensor.
+    </p>
+
+    <figure>
+      <img src="porfolio_photos/EK210/code_flow.png" width="400">
     </figure>
-  </div>
 
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK210/code_flow.png" style="width:400px;">
-    </figure>
-  </div>
-
-  <div>
-    <figure style="text-align:center;">
-      <img src="porfolio_photos/EK210/ppl.png" style="width: 500px;">
+    <figure>
+      <img src="porfolio_photos/EK210/ppl.png" width="500">
       <figcaption>
-        Teammates included Riley Applebaum, Madison McDonald, Valentina Vidal to put this project together. 
-        McDonald led housing design and Vidal focused on assembly and circuitry. 
+        Teammates included Riley Applebaum, Madison McDonald, Valentina Vidal.<br>
+        McDonald led housing design and Vidal focused on assembly and circuitry.<br>
         Applebaum and I collaborated on the circuit's hardware and code.
       </figcaption>
     </figure>
-  </div>
+  </main>
 
-</main>
-
+</body>
 </html>
