@@ -1,0 +1,179 @@
+
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
+#define BUZZER_PIN 9 // Set the pin where the piezo buzzer is connected
+#define NOTE_C5  523 // Frequency of the note C5
+#define NOTE_Ab4 415
+#define NOTE_AS4 466
+#define NOTE_Db4 277
+#define NOTE_D4  294
+#define NOTE_Ds4 311
+#define NOTE_Eb4 311
+#define NOTE_E4  330
+#define NOTE_F3  175
+#define NOTE_F4  349
+#define NOTE_Gb4 415
+#define NOTE_G4  392
+#define NOTE_A3  220
+#define NOTE_A4  440
+#define REST     0
+
+#define TEMP_SENSOR_PIN A0 // Set the pin where the temperature sensor is connected
+#define LED_PIN 2 // Set the pin where the LED is connected
+int sensorPin = 0;
+const float THRESHOLD_TEMP = 24.0; // Temperature threshold in Celsius
+const float LOWER_TEMP = 20.0; // Temperature threshold in Celsius
+
+int starWars[] = {
+  // Note, Duration
+  NOTE_A3, NOTE_A3, NOTE_A3, NOTE_F3, REST, 
+  NOTE_A3, NOTE_F3, REST, NOTE_Ab4, NOTE_G4, 
+  NOTE_F4, NOTE_F4, NOTE_Eb4, NOTE_D4, REST, 
+  NOTE_D4, NOTE_Db4, NOTE_D4, NOTE_Gb4, REST, 
+  NOTE_G4, NOTE_F4, NOTE_Eb4, NOTE_D4, REST, 
+  NOTE_Ab4, NOTE_F4, REST, NOTE_Ab4, NOTE_G4, 
+  NOTE_F4, NOTE_F4, NOTE_Eb4, NOTE_D4, REST, 
+  NOTE_D4, NOTE_Db4, NOTE_D4, NOTE_Gb4, REST, 
+  NOTE_G4, NOTE_F4, NOTE_Eb4, NOTE_D4, REST, 
+  NOTE_Ab4, NOTE_F4, REST, NOTE_Ab4, NOTE_G4, 
+  NOTE_F4, NOTE_F4, NOTE_G4, NOTE_Ab4, NOTE_F4, 
+  REST, NOTE_Gb4, NOTE_F4, NOTE_Ds4, NOTE_F4, 
+  NOTE_AS4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_G4, 
+  REST, NOTE_Ab4, NOTE_G4, NOTE_F4, NOTE_Eb4, NOTE_F4, 
+  REST, NOTE_Gb4, NOTE_F4, NOTE_Ds4, NOTE_F4, 
+  NOTE_AS4, NOTE_A4, NOTE_G4, NOTE_F4, NOTE_G4, 
+  REST, NOTE_Ab4, NOTE_G4, NOTE_F4, NOTE_Eb4, NOTE_F4, 
+  REST
+};
+
+LiquidCrystal_I2C lcd(0x20,16,2); // set the LCD address to 0x20 for a 16 chars and 2 line display
+
+void setup() {
+  pinMode(LED_PIN, OUTPUT); // Set the LED pin as an output
+  lcd.init(); // initialize the lcd
+  Serial.begin(9600); // Start the serial connection with the computer
+  lcd.backlight(); // Turn on the LCD backlight
+   // display "Hello" on the first line
+  lcd.setCursor(0, 0);
+  lcd.print("Hello");
+
+  // wait for 5 seconds
+  delay(5000);
+
+  // clear the screen
+  lcd.clear();
+
+}
+
+void loop() {
+  lcd.backlight(); // Turn on the LCD backlight
+  int reading = analogRead(sensorPin);
+  // Print temperature on LCD screen
+  
+  float voltage = reading * 5.0;
+  voltage /= 1024.0; 
+     
+  // print out the voltage
+  Serial.print(voltage); Serial.println(" volts");
+  lcd.setCursor(0, 0);
+  lcd.print("Temperature"); // Print the temperature in Celsius
+     // now print out the temperature
+  float temperatureC = (voltage - 0.5) * 100 ;  //converting from 10 mv per degree with 500 mV offset
+                                                   //to degrees ((voltage - 500mV) times 100)
+  Serial.print(temperatureC); 
+  Serial.println(" degrees C");
+  lcd.setCursor(0, 1);
+  lcd.print(temperatureC); // Print the temperature in Celsius
+  lcd.print("C..."); // Print the unit "C"
+     // now convert to Fahrenheit
+  float temperatureF = (temperatureC * 9.0 / 5.0) + 32.0;
+  Serial.print(temperatureF); 
+  Serial.println(" degrees F");
+  lcd.print(temperatureF); // Print the temperature in Celsius
+  lcd.print("F"); // Print the unit "C" 
+  delay(1000); //waiting a second
+
+  if (temperatureC > THRESHOLD_TEMP) {
+    lcd.clear();
+    lcd.setCursor(0, 1); // Set the cursor to the first column of the second row
+    lcd.print("Too Hot: "); // Print the text "Too Hot: "
+    lcd.print(temperatureC); // Print the temperature in Celsius
+    lcd.print("C"); // Print the unit "C"
+    playAlarmAndStarWars();
+
+  } else if (temperatureC < LOWER_TEMP) {
+    lcd.clear();
+    lcd.setCursor(0, 1); // Set the cursor to the first column of the second row
+    lcd.print("Too Cold: "); // Print the text "Too Cold: "
+    lcd.print(temperatureC); // Print the temperature in Celsius
+    lcd.print("C"); // Print the unit "C"
+    playAlarmAndStarWars();
+
+  } else {
+    lcd.setCursor(0, 1); // Set the cursor to the first column of the second row
+    lcd.print("Temperature: "); // Print the text "Temperature: "
+    lcd.print(temperatureC); // Print the temperature in Celsius
+    lcd.print("C"); // Print the unit "C"{
+  }
+}
+
+
+
+void playAlarmAndStarWars() {
+  int size = sizeof(starWars) / (sizeof(int) * 2);
+  for (int i = 0; i < size; i++) {
+    int note = starWars[i * 2];
+    int duration = starWars[i * 2 + 1];
+    if (note == 0) {
+      delay(duration);
+    } else {
+      tone(BUZZER_PIN, note, duration);
+      digitalWrite(LED_PIN, HIGH);
+      delay(duration);
+      noTone(BUZZER_PIN);
+      digitalWrite(LED_PIN, LOW);
+    }
+    delay(20); // Add a small delay between each note
+  }
+  for (int i = 0; i < 3; i++) { // Play the alarm 3 times
+    playBlinker();
+    delay(1000); // Wait for 1 second between each alarm
+  }
+}
+
+void playBlinker() 
+{
+  
+  digitalWrite(LED_PIN, HIGH); // Turn on the LED
+  noTone(BUZZER_PIN); // Stop playing the note
+  delay(100); // Wait for 100 milliseconds
+  digitalWrite(LED_PIN, LOW); // Turn off the LED
+  delay(1000); // Wait for 100 milliseconds
+  digitalWrite(LED_PIN, HIGH); // Turn on the LED
+  
+  delay(100); // Wait for 100 milliseconds
+  digitalWrite(LED_PIN, LOW); // Turn off the LED
+  delay(100);
+}
+
+void playStarWars() {
+  int size = sizeof(starWars) / (sizeof(int) * 2);
+  for (int i = 0; i < size; i++) {
+    int note = starWars[i * 2];
+    int duration = starWars[i * 2 + 1];
+    if (note == 0) {
+      delay(duration);
+    } else {
+      tone(BUZZER_PIN, note, duration);
+      noTone(BUZZER_PIN); // Stop playing the note
+    }
+    digitalWrite(LED_PIN, HIGH); // Turn on the LED
+    delay(50); // Wait for 50 milliseconds
+    digitalWrite(LED_PIN, LOW); // Turn off the LED
+    delay(50); // Wait for 50 milliseconds
+    delay(20); // Add a small delay between each note
+  }
+}
+
+
+
