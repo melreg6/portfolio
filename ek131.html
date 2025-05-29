@@ -2,58 +2,72 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-  <title>Assisitve Eating Utensil</title>
+  <meta charset="UTF-8">
+  <title>Room Temperature Sensor</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-<h1>Room Temperature Sensor</h1>
-
+  <h1 style="font-family: 'Pixelify Sans', sans-serif; text-align: center;">%% Room Temperature Monitor %%</h1>
 </body>
 
 <main>
+  <div style="text-align: center; margin: 20px;">
+    <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;">&larr; Back to Main</a>
+  </div>
 
+  <div>
+    <figure style="text-align: center;">
+      <img src="porfolio_photos/EK131/iso_view.png" style="width:400px;">
+    </figure>
+  </div>
 
-     <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;" > <--- Back to Main </a>
+  <div>
+    <figure style="text-align: center;">
+      <img src="porfolio_photos/EK131/top.png" style="width:400px;">
+    </figure>
+  </div>
 
+  <div>
+    <figure style="text-align: center;">
+      <img src="porfolio_photos/EK131/cold.png" style="width:400px;">
+    </figure>
+  </div>
 
-    <div>
-        <figure  style = "text-align: center;">
-            <img   src="porfolio_photos/EK131/iso_view.png" style="width:400px;"">  
-        </figure>
+  <div>
+    <figure style="text-align: center;">
+      <img src="porfolio_photos/EK131/circuit.png" style="width:400px;">
+    </figure>
+  </div>
 
+  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Overview</h2>
+  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+    This room temperature monitor, built for EK131, uses an Arduino Uno to display temperature readings and trigger alerts when the room temperature falls outside a set range (20–25°C). The system includes a green/red LED, a Piezo buzzer that plays a melody, and a 16x2 I2C LCD screen.
+  </h3>
 
-    </div>
+  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Functionality</h2>
+  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+    The TMP36 sensor provides analog voltage values, which are converted to temperature using Arduino code. The LCD updates every 1–2 seconds. If the temperature is too hot or cold, a red LED blinks and the buzzer plays the Star Wars theme. If in range, a green LED remains on.
+  </h3>
 
+  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Design Features</h2>
+  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+    Powered by a 9V battery and housed in a custom enclosure with a 3D-printed battery holder, the circuit uses durable wiring (soldering, shrink wrap, spade connectors) for reliability. A two-way switch enables power control, and standard 1kΩ resistors protect the LEDs.
+  </h3>
 
-    <div>
-        <figure  style = "text-align: center;">
-            <img   src="porfolio_photos/EK131/top.png" style="width:400px;"">  
-        </figure>
+  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Limitations</h2>
+  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+    The 9V battery provides only ~5.6 hours of operation, making long-term use impractical without external power. The enclosure is also bulky, which could limit placement in small spaces or pet enclosures.
+  </h3>
 
+  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Key Takeaways</h2>
+  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+    The prototype accurately monitors and displays room temperature, functioning like a smart alert system. Improvements could include reducing size and switching to a longer-lasting power source such as USB power or rechargeable Li-ion battery packs.
+  </h3>
 
-    </div>
-
-
-
-    <div>
-        <figure  style = "text-align: center;">
-            <img   src="porfolio_photos/EK131/cold.png" style="width:400px;"">  
-        </figure>
-
-
-    </div>
-
-
-    <div>
-        <figure  style = "text-align: center;">
-            <img   src="porfolio_photos/EK131/circuit.png" style="width:400px;"">  
-        </figure>
-
-
-    </div>
+  
 </main>
-
 
 </html>
