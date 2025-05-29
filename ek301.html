@@ -2,113 +2,82 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-  <title>Assisitve Eating Utensil</title>
+  <meta charset="UTF-8">
+  <title>Truss Bridge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
-    <h1 style="font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;">
+  <h1 style="font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;">
     %% Truss Bridge %%
   </h1>
 
-
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="style.css">
-
-    <main>
-
-     <div style="text-align: center; margin: 20px;">
+  <main>
+    <div style="text-align: center; margin: 20px;">
       <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;">&larr; Back to Main</a>
     </div>
 
-
-
-
-
     <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EK301/main.png" style="width:400px;">
-        </figure>
-      </div>
-
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EK301/truss_drawing.png" style="width:400px;">
-        </figure>
+      <figure style="text-align: center;">
+        <img src="porfolio_photos/EK301/main.png" style="width:400px;">
+      </figure>
     </div>
 
-
-        <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Truss Calculation Method</h2>
-    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    Our method for truss calculation is the joint method. Firstly, we evaluate the whole truss as an entity. We calculate the reaction forces at the two support pins by drawing a free-body diagram and applying the conditions that net force and moment equal zero.
-
-    We then assume all members are in a state of tension and draw the free-body diagram for each joint analyzed. This step is typically computed using matrices. Assuming the total number of joints is J and the number of members is M, the resulting matrix should be of size (M+1) by 2J.
-
-    Using RREF (Reduced Row Echelon Form), we can solve for the force in each member. A negative value indicates compression; a positive value indicates tension.
-
-    If this process is done manually, we analyze each joint sequentially and solve the linear equations gradually. The example solution for the practice problem is shown in Figure 2. After comparison with our code-based approach, both methods yielded identical results.
-    </h3>
-
-
     <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EK301/schematic_cm.png" style="width:400px;">
-        </figure>
+      <figure style="text-align: center;">
+        <img src="porfolio_photos/EK301/truss_drawing.png" style="width:400px;">
+      </figure>
     </div>
 
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Project Overview</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      Developed a Pratt-style truss bridge using joint method analysis and matrix-based force computation. Designed two truss variations and evaluated load distribution, buckling risk, and load-to-cost efficiency using both code and manual calculations.
+    </h3>
 
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Truss Calculation Method</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      Used the joint method with RREF matrix computations to solve for internal member forces. Negative force values indicated compression, while positive values indicated tension. Manual and code-based approaches were cross-validated for accuracy.
+    </h3>
 
     <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EK301/codeSnippet.png" style="width:400px;">
-        </figure>
-      </div>
-
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EK301/codeSnippet2.png" style="width:400px;">
-        </figure>
+      <figure style="text-align: center;">
+        <img src="porfolio_photos/EK301/schematic_cm.png" style="width:400px;">
+      </figure>
     </div>
 
-    
+    <div>
+      <figure style="text-align: center;">
+        <img src="porfolio_photos/EK301/codeSnippet.png" style="width:400px;">
+      </figure>
+    </div>
 
-     <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;"> Conclusion </h2>
+    <div>
+      <figure style="text-align: center;">
+        <img src="porfolio_photos/EK301/codeSnippet2.png" style="width:400px;">
+      </figure>
+    </div>
+
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Results & Comparison</h2>
     <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-     The maximum load of the select truss (36.87±1.356oz ). 
-    Ways to further imprive figure is by adjusting the nodes to minimize the length of every member.
-
+      <strong>Design 1:</strong> Max load = 36.87±1.356oz | Load-to-cost ratio = 0.19 oz/$ <br>
+      <strong>Design 2:</strong> Max load = 31.26±1.849oz | Load-to-cost ratio = 0.165 oz/$ <br><br>
+      Both designs used 8 joints and ~110 inches of member length. Design 1 was selected due to its higher load capacity and better efficiency.
     </h3>
 
-
-
-     <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Team Members </h2>
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Conclusion</h2>
     <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-        Jindong Feng, Ana Jaquez-Zarate, and Melissa Regalado
+      The Pratt truss design proved most effective. To further optimize, we recommend reducing member lengths via node adjustments. Computer analysis improved accuracy and accelerated testing of multiple design iterations.
     </h3>
 
-
-
-
-
-
-
-      
-
-
-
-
-</main>
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Team Members</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      Jindong Feng, Ana Jaquez-Zarate, and Melissa Regalado
+    </h3>
+  </main>
 
 </body>
-
-
-
 
 </html>
