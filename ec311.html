@@ -1,127 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <title>Assistive Eating Utensil</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
 
-      
-
-<meta charset="UTF-8">
-  <title>Assisitve Eating Utensil</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<h1 style = "font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;"> %% Image Processing using UART and FPGA %% </h1>
+
+  <h1 style="font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;">
+    %% Image Processing using UART and FPGA %%
+  </h1>
+
+  <main>
+    <div style="text-align: center; margin: 20px;">
+      <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;">&larr; Back to Main</a>
+    </div>
+
+    <div style="text-align: center;">
+      <iframe width="420" height="315"
+        src="https://www.youtube.com/embed/eB2KplseXf0"
+        allowfullscreen>
+      </iframe>
+      <p style="font-family: 'Roboto Mono', sans-serif;">
+        If the video doesn't load, you can watch it directly on 
+        <a href="https://www.youtube.com/watch?v=eB2KplseXf0" target="_blank" rel="noopener noreferrer">YouTube</a>.
+      </p>
+    </div>
+
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Overview of Project</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      A signal processing machine with UART and FPGA is used to darken, brighten, and invert images.
+      MATLAB interfaces with the system, enabling efficient real-time manipulation of images through hardware-based processing.
+    </h3>
+
+    <div style="text-align: center;">
+      <img src="porfolio_photos/EC311/fpga_photo.png" style="width:400px;">
+    </div>
+
+    <div style="text-align: center;">
+      <img src="porfolio_photos/EC311/flow.png" style="width:400px;">
+    </div>
+
+    <div style="text-align: center;">
+      <img src="porfolio_photos/EC311/codeFlow.png" style="width:400px;">
+    </div>
+
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">System Description</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      In MATLAB, we read and resize the image, convert it to 8-bit RGB values, and send data byte-by-byte over UART.
+      The receiver and transmitter each use FSMs: one to receive bytes into a shift register, the other to send them out.
+      This processed data is displayed alongside the original image.
+    </h3>
+
+    <div style="text-align: center;">
+      <img src="porfolio_photos/EC311/outputs.png" style="width:400px;">
+    </div>
+
+    <div style="text-align: center;">
+      <img src="porfolio_photos/EC311/closer_output.png" style="width:400px;">
+    </div>
+
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Challenges</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      A major challenge was enabling color filtering through UART. Due to continuous transmission and MATLAB's live reading,
+      attempts to store data in buffers or FIFOs resulted in incorrect images (black outputs).
+      Future iterations will focus on solving this issue by improving data synchronization and storage logic.
+    </h3>
+  </main>
 
 </body>
-
-<main>
-
-     <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;" > <--- Back to Main </a>
-    <br>
-
-
-
-    <div style = "text-align: center;">
-      <iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=eB2KplseXf0">
-        </iframe>
-
-
-        <!-- in case iframe doesn't load -->
-        <p>If the video doesn't load, you can watch it directly on 
-        <a href="https://www.youtube.com/watch?v=eB2KplseXf0" target="_blank" rel="noopener noreferrer">
-        YouTube
-        </a>.
-        </p>
-    </div>
-    
-
-    <p style = "font-family: 'Roboto Mono', sans-serif; font-weight: 400; text-align: center;">
-        <h2>
-                Overview of Project
-        </h2>
-
-        <h3>
-            
-                A signal processing machine with UART and FPGA is used to darken, brighten, and invert images. MATLAB interfaces with the system, enabling efficient real-time manipulation of images through hardware-based processing.
-        </h3>
-    </p>
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EC311/fpga_photo.png" style="width:400px;">
-        </figure>
-    </div>
-
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EC311/flow.png" style="width:400px;">
-        </figure>
-    </div>
-
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EC311/codeFlow.png" style="width:400px;">
-        </figure>
-    </div>
-
-
-    <p style = "font-family: 'Roboto Mono', sans-serif; font-weight: 400; text-align: center;">
-        <h2>
-
-        </h2>
-
-        <h3>
-
-            
-            In our MATLAB file, we initially read in an image and resize the image to our desired resolution. The data that is read in is converted into unsigned integer 8 bits, which is in a 3D matrix due to the RGB values. Afterward, the data that is going to be sent back is initialized as the same 3D matrix with zeros. To send the serial data through the UART, we are using nested for loops to send one byte at a time. These for loops access each pixel of the image, and each pixel has three bytes for the corresponding RGB values that get written into the UART and read back after the transmission. After every byte is processed, the processed image is displayed next to the original image.
-
-            Both the transmitter and receiver modules make use of FSMs within their architecture made up of an idle state and a transmitting/receiving state to determine when data is transmitted.
-
-            Receiver FSM:
-            State 0: Waits for receiving signal (idle state)
-            State 1: Receives the data bits one-by-one. The data is passed into the rxshiftreg and increments the counter. Once all bits have been received, it returns to the idle state.
-            Transmitter FSM:
-            State 0: Waits for transmit signal (idle state)
-            State 1: Transmits bits one-by-one by shifting data and updating TxD. Once all bits are sent, it returns to the idle state.
-                    </h3>
-    </p>
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EC311/outputs.png" style="width:400px;">
-        </figure>
-    </div>
-
-    <div>
-        <figure style = "text-align: center;">
-            <img src="porfolio_photos/EC311/closer_output.png" style="width:400px;">
-        </figure>
-    </div>
-
-
-
-    <p style = "font-family: 'Roboto Mono', sans-serif; font-weight: 400; text-align: center;">
-        <h2>Challenges</h2>
-        <h3>
-             A major setback to expanding the functionality of our project was our inability to change the transmitter and receiver modules to categorize our data to be able to differentiate RGB pixels that would allow for more color filtering and a variety of other transformations. We also had trouble storing all the data in a buffer/FIFO and transmitting it back. We think the cause of this issue is that the transmitter is constantly transmitting data back, so if we are storing multiple bytes of data, we would need to wait until the storage is full before transmitting. However, at the same time, MATLAB is always reading what is being transmitted. So, when we’d implement any sort of storage in Verilog, we would receive back a completely black image. This would be something we hope to solve in the future.
-
-        </h3>
-       
-    </p>
-
-
-
-
-
-
-</main>
-
-
 </html>
