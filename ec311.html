@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Assistive Eating Utensil</title>
+  <title>Image Processing using UART and FPGA</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -33,51 +33,51 @@
       </p>
     </div>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Overview of Project</h2>
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Project Overview</h2>
     <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      A signal processing machine with UART and FPGA is used to darken, brighten, and invert images.
-      MATLAB interfaces with the system, enabling efficient real-time manipulation of images through hardware-based processing.
+      Built a hardware-accelerated image processing system using UART communication between MATLAB and an FPGA.
+      The system performs darkening, brightening, and inversion transformations on images in real time.
     </h3>
 
     <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/fpga_photo.png" style="width:400px;">
+      <img src="porfolio_photos/EC311/fpga_photo.png" style="width:400px;" alt="FPGA Setup">
     </div>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/flow.png" style="width:400px;">
-    </div>
-
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/codeFlow.png" style="width:400px;">
-    </div>
-
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">System Description</h2>
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">System Workflow</h2>
     <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      In MATLAB, we read and resize the image, convert it to 8-bit RGB values, and send data byte-by-byte over UART.
-      The receiver and transmitter each use FSMs: one to receive bytes into a shift register, the other to send them out.
-      This processed data is displayed alongside the original image.
+      MATLAB reads and converts the image into 8-bit RGB values, sending them byte-by-byte over UART to the FPGA.
+      The FPGA uses FSMs to receive, process, and return transformed pixels back to MATLAB for display.
     </h3>
 
     <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/outputs.png" style="width:400px;">
+      <img src="porfolio_photos/EC311/flow.png" style="width:400px;" alt="System Flow">
+      <img src="porfolio_photos/EC311/codeFlow.png" style="width:400px;" alt="Code Structure">
     </div>
+
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Features</h2>
+    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
+      - 3 image transformations: lighten, darken, invert<br>
+      - Hardware control via Basys 3 board switches<br>
+      - Verilog modules for receiver, transmitter, and FSM-based control<br>
+      - MATLAB GUI for visualization and UART interfacing
+    </h3>
 
     <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/closer_output.png" style="width:400px;">
+      <img src="porfolio_photos/EC311/outputs.png" style="width:400px;" alt="Output Side-by-Side">
+      <img src="porfolio_photos/EC311/closer_output.png" style="width:400px;" alt="Closer Output">
     </div>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Challenges</h2>
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Challenges & Learnings</h2>
     <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      A major challenge was enabling color filtering through UART. Due to continuous transmission and MATLAB's live reading,
-      attempts to store data in buffers or FIFOs resulted in incorrect images (black outputs).
-      Future iterations will focus on solving this issue by improving data synchronization and storage logic.
+      A major challenge was enabling more complex color filtering using UART. 
+      Continuous transmission and live reading by MATLAB made buffered storage difficult, resulting in black images.
+      Future improvements include implementing FIFO-based buffering and better synchronization strategies.
     </h3>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Team Members </h2>
+    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Team Members</h2>
     <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-        Varsha Athreya, Melissa Regalado, Punnisa Amornsirikul, and Conor Holland Ruane
+      Varsha Athreya, Melissa Regalado, Punnisa Amornsirikul, and Conor Holland Ruane
     </h3>
-
 
   </main>
 
