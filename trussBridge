@@ -1,0 +1,193 @@
+TrussBridgeIn.m
+%%EK301 Truss Project 
+
+clear; 
+%according to design 
+
+%number of joints 
+
+j = 8;
+% number of members 
+
+m = 13;
+C = zeros(j,m);
+
+% this will deifne the connection of members and joints 
+% it goes by start joint to end joint for our total members 
+
+members = [1,2; %1
+           2,3; %2
+           3,4; %3
+           4,5; %4
+           5,6; %5
+           6,7; %6
+           7,8; %7
+           8,1; %8
+           2,8; %9
+           3,7; %10
+           4,6; %11
+           3,8; %12
+           6,3];%13
+
+
+%% Let C represent the connection matrix 
+
+for i = 1:size(members,1)
+    C(members(i,1),i)=1;
+    C(members(i,2),i)=1;
+end 
+
+
+% Supporting forces 
+
+Sx = zeros(j,3);
+Sy = zeros(j,3);
+
+Sx(1,1) = 1;
+Sy(1,2) = 1;
+Sy(5,3) = 1;
+
+% X and Y coordinates of joints 
+X = [0,7,14,23,31,23,14,7];
+Y = [0,0,0,0,0,7,7,7];
+
+A = zeros(2*j,m+3);
+
+
+% this will fill in the A matrix 
+
+for i = 1:size(members,1)
+    start_joint = members(i,1);
+    end_joint = members(i,2);
+    deltaX = X(end_joint) - X(start_joint);
+    deltaY = Y(end_joint) - Y(start_joint);
+    distance = sqrt(deltaX^2+deltaY^2);
+    A(start_joint,i) = deltaX/distance;
+    A(j + start_joint,i) = deltaY/distance; 
+    A(end_joint,i) = -deltaX/distance;
+    A(j + end_joint,i) = -deltaY/distance; 
+end 
+
+A(:, m+1) = [Sx(:,1);zeros(j,1)];
+A(:, m + 2) = [zeros(j, 1); Sy(:, 2)];
+A(:, m + 3) = [zeros(j, 1); Sy(:, 3)];
+
+
+L = zeros(2*j,1);
+L(j+3) = 32;
+
+%disp(A)
+
+T = A\L;
+
+% inital live load 
+
+member_len = zeros(m,1);
+
+p_crit = zeros(m,1);
+
+for i = 1:m
+    start_joint = members(i,1);
+    end_joint = members(i,2);
+    deltaX = X(end_joint) - X(start_joint);
+    deltaY = Y(end_joint) - Y(start_joint);
+    distance = sqrt(deltaX^2+deltaY^2);
+    member_len(i)=distance;
+    p_crit(i)= 3054.789 * distance^(-2.009);
+end 
+
+w = 32;
+
+rm = T(1:m)/ w;
+tm = rm*w;
+
+P_crit = 3054.789 * member_len.^(-2.009); 
+tc = -P_crit;
+rc = tc / w;
+
+%w_fail = zeros(m,1);
+
+w_fail = -p_crit./rc;
+
+
+%critical member and minimum w failure
+[min_w_fail,crit_mem] = min(w_fail);
+
+
+
+
+%%saving file 
+
+save('TrussDesign1_AnaJindongMelissa_A3.mat','C','Sx','Sy','X','Y','L')
+
+
+
+%% Loading Input File 
+
+% inputFile = '/MATLAB Drive/EK301/TrussDesign1_AnaJindongMelissa_A3.mat';
+% loadedData = load(inputFile);
+% 
+% C = loadedData.C;
+% Sx = loadedData.Sx;
+% Sy = loadedData.Sy;
+% X = loadedData.X;
+% Y = loadedData.Y;
+% L = loadedData.L;
+% 
+% theo_ml_cr = maxLoad/costRatio;
+% 
+% 
+% 
+% 
+%%Printing output statements 
+
+fprintf(' \% EK301, Section A3, Group 19: Jindong F.,Ana J.,Melissa R.,4/1/2024.\n');
+
+fprintf('Load: %d oz\n',w);
+
+fprintf('Member forces in oz:\n');
+for i = 1:m
+    if T(i)< 0
+        force = 'C';
+    else 
+        force = 'T';
+    end
+    fprintf('m%d: %.3f (%s)\n',i,abs(T(i)),force);
+end 
+
+fprintf('Reaction forces in oz:\n');
+
+Sx1 = T(m + 1, 1); 
+Sy1 = T(m + 2, 1); 
+Sy2 = T(m + 3, 1); 
+
+
+fprintf('Sx1: %.2f\n', Sx1);
+fprintf('Sy1: %.2f\n', Sy1);
+fprintf('Sy2: %.2f\n', Sy2);
+
+%fprintf('Sx1: %.2f\n', Sx(1, 1));
+
+%for i = 1:size(Sy, 1)
+   % if Sy(i) ~= 0
+    %    fprintf('Sy%d: %.2f\n', i, Sy(i));
+    %end
+%end
+
+%cost calc 
+
+c1 = 10;
+c2 = 1; 
+
+%L = sum(member_len);
+cost = (c1*j)+(c2*sum(member_len));
+
+theo_ml_cr = min_w_fail /cost; 
+
+fprintf('Cost of truss: $%.0f\n',cost);
+
+fprintf('Theoretical max load/ cost ratio in oz/$: %.4f\n',theo_ml_cr);
+
+
+
+
