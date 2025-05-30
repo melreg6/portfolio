@@ -1,14 +1,11 @@
-⋆｡ﾟ☁︎｡⋆｡ﾟ☾ﾟ｡⋆ Welcome! ⋆｡ﾟ☁︎｡⋆｡ﾟ☾ﾟ｡⋆
+♡‧₊˚ Welcome! ‧₊˚♡
 
-✦  My full portfolio here:  
-→ [https://melreg6.github.io/melreg](https://melreg6.github.io/melreg) ← ☆
-
-⋆｡ﾟ☁︎｡⋆｡ﾟ☾ﾟ｡⋆
-
- (´｡• ᵕ •｡`)  
-
-⋆｡ﾟ✧ Contact ✧｡ﾟ⋆  
+(´｡• ᵕ •｡`) ♡
+♡━━━━━━━━━━━━━━♡
+♥︎ Check out my full portfolio:  
+→ https://melreg6.github.io/melreg ←
+♡━━━━━━━━━━━━━━♡
+♡ Contact ♡  
 ✉︎ mregal@bu.edu  
-✦ Boston & Chicago based
+♥︎ Boston & Chicago based
 
-*:･ﾟ✧*:･ﾟ✧
