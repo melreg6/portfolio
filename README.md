@@ -2,7 +2,7 @@
 
 (´｡• ᵕ •｡`) ♡  
 
-
+My name is Melissa, a Computer Engineering Student @ Boston University!
 ♡━━━━━━━━━━━━━━♡
 
 ♥︎ Check out my full portfolio:  
