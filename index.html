@@ -1,173 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+<head>
+    <meta charset="UTF-8" />
+    <title>Engineering Portfolio</title>
 
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-        
-        <title>Engineering Portfolio</title>
-        
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-        
-        <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <!-- Styles -->
+    <style>
+        body {
+            background-image: url('potential back.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            font-family: "Roboto Mono", monospace;
+        }
 
-        <link rel="stylesheet" href="style.css">
+        header {
+            text-align: center;
+            margin-top: 40px;
+        }
 
-    </head>
+        header h1 {
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 42px;
+            font-weight: 400;
+        }
 
+        header h2 {
+            font-family: "Roboto Mono", monospace;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
 
-    <body>
+        header h3 {
+            font-family: "Roboto Mono", monospace;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
 
-        <header>
-            <br>
-            <br>
-            <br>
-       
-            <h1> Melissa Regalado </h1>
-            <h2>Engineering Portfolio</h2>
-            <h3> B.S in Computer Engineering </h3>
+        .section-heading {
+            font-family: 'Pixelify Sans', sans-serif;
+            font-weight: 400;
+            text-align: center;
+        }
 
+        /* NAV */
+        nav {
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 42px;
+            text-align: center;
+            font-weight: 400;
+        }
 
-            
+        /* ABOUT CARD */
+        .about-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 40px auto;
+            max-width: 650px;
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
 
-        </header>
+        .about-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
 
+        .about-card-inner {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-        <nav style = "font-family: 'Pixelify Sans', sans-serif; font-weight: 400;">
+        .about-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
 
+        .about-text {
+            flex: 1;
+            font-family: "Roboto Mono", monospace;
+            color: #333;
+            text-align: left;
+        }
 
-            <!-- <a href="#projects">Projects</a>
-            <a href="workexper.html">Work Experience</a>
-            <a href ="#resume">Resume</a>
-            <a href="#contact">Contact</a>
- -->
+        .about-text h2 {
+            font-family: "Pixelify Sans", sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
 
-        </nav>
+        /* PROJECTS */
+        #projects {
+            padding: 40px;
+            text-align: center;
+        }
 
-        <main>
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
 
+        .project-card {
+            background-color: #fefefe;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            text-align: center;
+        }
 
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
 
-      <!-- ABOUT ME card -->
-<div class="about-card">
-  <div class="about-card-inner">
-    <img src="me.png" alt="Melissa Regalado" class="about-image">
-    <div class="about-text">
-      <h2 style = "font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;">%% About Me %%</h2>
-      <p>
-        My name is Melissa Regalado, a Computer Engineering student at Boston University. I am passionate about designing systems that integrate hardware and software to create a meaningful impact. I'm particularly interested in projects involving medical devices, assistive technology, and energy-efficient design. My love of visual art shapes how I approach engineering challenges with creativity, clarity, and impact.
-      </p>
-    </div>
-  </div>
-</div>
+        .project-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
 
-           
+        .project-card h3 {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #333;
+            font-family: "Roboto Mono", monospace;
+        }
 
+        /* CONTACT CARD */
+        .contact-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin: 40px auto;
+            max-width: 500px;
+            font-family: "Roboto Mono", monospace;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
 
-            <section id="projects" >
-                <h2>%% Projects %%</h2>
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
 
-                <div class="project-list">
-                    
+        .contact-info p {
+            margin: 10px 0;
+            font-size: 0.95rem;
+            color: #333;
+        }
 
-                    
-                        <div class="project-card"> 
-                            <a href="ek131.html">
-                            <img src="porfolio_photos/EK131/iso_view.png">
+        .contact-info a {
+            color: rgb(8, 54, 135);
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-                                <h3>Room Temperature Sensor </h3>
-                            </a>
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
 
-                        </div>
+        /* WORK CARD */
+        .work-card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin: 40px auto;
+            max-width: 500px;
+            font-family: "Roboto Mono", monospace;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
 
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
 
-                        
+        footer {
+            text-align: center;
+            font-family: "Roboto Mono", monospace;
+            padding: 20px;
+            color: #333;
+        }
+    </style>
+</head>
 
-                        <div class="project-card"><a href="ek210.html">
-                            <img src="porfolio_photos/EK210/main.png">
-                            <h3> Assistive Eating Utensil </h3>
-                        </a></div>
-                        
+<body>
 
+    <header>
+        <h1>Melissa Regalado</h1>
+        <h2>Engineering Portfolio</h2>
+        <h3>B.S in Computer Engineering</h3>
+    </header>
 
+    <nav>
+        <!-- Navigation links if needed -->
+    </nav>
 
-                        <div class="project-card"><a href="ek301.html">
-                            <img src="porfolio_photos/EK301/main.png">
-                            <h3>Truss Bridge </h3>
-                        </a></div>
-                        
+    <main>
+        <!-- About Me Card -->
+        <div class="about-card">
+            <div class="about-card-inner">
+                <img src="me.png" alt="Melissa Regalado" class="about-image">
+                <div class="about-text">
+                    <h2 class="section-heading">%% About Me %%</h2>
+                    <p>
+                        My name is Melissa Regalado, a Computer Engineering student at Boston University. I am passionate about designing systems that integrate hardware and software to create a meaningful impact. I'm particularly interested in projects involving medical devices, assistive technology, and energy-efficient design. My love of visual art shapes how I approach engineering challenges with creativity, clarity, and impact.
+                    </p>
+                </div>
+            </div>
+        </div>
 
-
-                        <div class="project-card"> 
-
-                            <a href="ec311.html">
-                            <img src="porfolio_photos/EC311/fpga_photo.png">
-                            <h3> Image Processing using UART and FPGA </h3> </a>
-
-                        </div>
-
-
-                       <div class="project-card"> 
-                        <a href="ec571.html">
-                            <img src="porfolio_photos/EC571/HBLSA.png">
-                            <h3>Replication and Analysis of Low-Power HBLSA SRAM</h3>
-                        </a>
-                        </div>
-
-                    
-                     
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-heading">%% Projects %%</h2>
+            <div class="project-list">
+                <div class="project-card">
+                    <a href="ek131.html">
+                        <img src="porfolio_photos/EK131/iso_view.png">
+                        <h3>Room Temperature Sensor</h3>
+                    </a>
                 </div>
 
-               
-            </section>
+                <div class="project-card">
+                    <a href="ek210.html">
+                        <img src="porfolio_photos/EK210/main.png">
+                        <h3>Assistive Eating Utensil</h3>
+                    </a>
+                </div>
 
+                <div class="project-card">
+                    <a href="ek301.html">
+                        <img src="porfolio_photos/EK301/main.png">
+                        <h3>Truss Bridge</h3>
+                    </a>
+                </div>
 
-            
+                <div class="project-card">
+                    <a href="ec311.html">
+                        <img src="porfolio_photos/EC311/fpga_photo.png">
+                        <h3>Image Processing using UART and FPGA</h3>
+                    </a>
+                </div>
 
-           
+                <div class="project-card">
+                    <a href="ec571.html">
+                        <img src="porfolio_photos/EC571/HBLSA.png">
+                        <h3>Replication and Analysis of Low-Power HBLSA SRAM</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-
-            <section id="contact">
-                <div class="contact-card">
-                   <h2 style = "font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;" >%% My Contact %% </h2>
-
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="contact-card">
+                <h2 class="section-heading">%% My Contact %%</h2>
                 <div class="contact-info">
-                <p style = "font-family: Roboto Mono;">Email: <a href="mailto:mregal@bu.edu"> mregal@bu.edu</a></p>
-                <p style = "font-family: Roboto Mono;"> Github: <a href="https://github.com/melreg6/portfolio">Click Here! </a></p>
-                <p style = "font-family: Roboto Mono;">LinkedIn: <a href = "https://www.linkedin.com/in/melissa-regalado-bb7009289/"> Click Here! </a></p>
-                <p style = "font-family: Roboto Mono;">Location: Chicago, IL & Boston, MA</p> 
-                <p><a href="MelissaRegalado_Resume.pdf" download style="font-family: 'Pixelify Sans', sans-serif; text-align: center; display: block; margin: 20px auto; font-size: 18px;">
-                    📄 Download My Resume
-</a>
-</p>
+                    <p>Email: <a href="mailto:mregal@bu.edu">mregal@bu.edu</a></p>
+                    <p>GitHub: <a href="https://github.com/melreg6/portfolio">Click Here!</a></p>
+                    <p>LinkedIn: <a href="https://www.linkedin.com/in/melissa-regalado-bb7009289/">Click Here!</a></p>
+                    <p>Location: Chicago, IL & Boston, MA</p>
+                    <p><a href="MelissaRegalado_Resume.pdf" download>📄 Download My Resume</a></p>
                 </div>
-                </div>
+            </div>
+        </section>
 
-            </section>
+        <!-- Work Experience Section -->
+        <section id="work-exper">
+            <div class="work-card">
+                <h2 class="section-heading">%% My Past Work Experience</h2>
+                <p><a href="workexper.html">Click Here!</a></p>
+            </div>
+        </section>
+    </main>
 
-            <section id="work-exper">
-                <div class ="work-card">
-                    <h2 style = "font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;" > %% My Past Work Experience </h2>
-                    <p style = "font-family: Roboto Mono;">  <a href="workexper.html">Click Here!</a> </p>
-                </div>
-            </section>
-    
-            
+    <footer>
+        <p>&copy; 2025 Melissa Regalado</p>
+    </footer>
 
-        </main>
-
-        <footer>
-            <p>&copy; 2025 Melissa Regalado</p>
-        </footer>
-
-
-        
-
-
-    </body>
-
-
+</body>
 </html>
-
-
-
