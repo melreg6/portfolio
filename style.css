@@ -5,14 +5,15 @@ body {
   font-family: sans-serif;
 }
 
-.iframe-bg {
+/* Fullscreen background video */
+.background-video {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
   z-index: -1;
-  border: none;
   pointer-events: none;
 }
 
@@ -106,105 +107,4 @@ nav {
   padding: 20px;
   margin: 40px auto;
   max-width: 650px;
-  transition: transform 0.2s ease;
-  text-align: center;
-}
-
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.about-card-inner {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.about-image {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
-}
-
-.about-text {
-  flex: 1;
-  font-family: "Roboto Mono", monospace;
-  color: #333;
-}
-
-.about-text h2 {
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  text-align: left;
-}
-
-.about-text p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0;
-  text-align: left;
-}
-
-.contact-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin: 40px auto;
-  max-width: 500px;
-  font-family: "Roboto Mono", monospace;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
-
-.contact-card h2 {
-  font-family: "Roboto Mono", monospace;
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-}
-
-.contact-info {
-  font-family: "Roboto Mono", monospace;
-}
-
-.contact-info p {
-  margin: 10px 0;
-  font-size: 0.95rem;
-  color: #333;
-}
-
-.contact-info a {
-  color: rgb(8, 54, 135);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.contact-info a:hover {
-  text-decoration: underline;
-}
-
-.work-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin: 40px auto;
-  max-width: 500px;
-  font-family: "Roboto Mono", monospace;
-  text-align: center;
-  transition: transform 0.2s ease;
-}
-
-.work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
 }
