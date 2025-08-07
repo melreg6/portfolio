@@ -29,11 +29,11 @@ header h1 {
   font-weight: 400;
 }
 
-/* header h2, header h3 {
+header h2, header h3 {
   font-family: "Pixelify Sans", sans-serif;
   text-align: center;
   
-} */
+}
 
 header h2 {
   font-size: 24px;
@@ -147,7 +147,7 @@ nav {
 }
 
 .contact-card {
-  font-family: "Pixelify Sans", sans-serif;
+  
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -179,7 +179,7 @@ nav {
 }
 
 .work-card {
-  font-family: "Pixelify Sans", sans-serif;
+  
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
