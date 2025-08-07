@@ -20,16 +20,7 @@ html, body {
   pointer-events: none;
 }
 
-/* Optional: Dimmed overlay for readability */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgb(255, 255, 255);
-  z-index: -1;
-}
+
 
 header h1 {
   font-family: "Pixelify Sans", sans-serif;
