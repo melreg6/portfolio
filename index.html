@@ -1,122 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Engineering Portfolio</title>
+  <meta charset="UTF-8" />
+  <title>Engineering Portfolio</title>
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <!-- Fullscreen Background Video -->
-    <video autoplay loop muted playsinline class="background-video">
-        <source src="gen_mot_pic.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-    </video>
+  <!-- Background Video -->
+  <video autoplay loop muted playsinline class="background-video">
+    <source src="gen_mot_pic.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <header>
-        <h1>Melissa Regalado</h1>
-        <h2>Engineering Portfolio</h2>
-        <h3>B.S in Computer Engineering</h3>
-    </header>
+  <!-- Optional dark overlay -->
+  <div class="overlay"></div>
 
-    <nav>
-        <!-- Navigation links if needed -->
-    </nav>
+  <header>
+    <h1>Melissa Regalado</h1>
+    <h2>Engineering Portfolio</h2>
+    <h3>B.S in Computer Engineering</h3>
+  </header>
 
-    <main>
-        <!-- About Me Card -->
-        <div class="about-card">
-            <div class="about-card-inner">
-                <img src="me.png" width="300" alt="Melissa Regalado" class="about-image">
-                <div class="about-text">
-                    <h2 class="section-heading">%% About Me %%</h2>
-                    <p>
-                        My name is Melissa Regalado, a Computer Engineering student at Boston University. I am passionate about designing systems that integrate hardware and software to create a meaningful impact. 
-                        Additionally, I have a deep interest in semiconductor technologies and quantum physics and am eager to learn about how these emerging practices mold the future of computing and electronics.
-                        I am also interested in projects involving medical devices, assistive technology, and energy-efficient design that promote sustainable energy solutions.
-                        My love of the visual arts shapes how I approach engineering challenges with creativity, clarity, and impact.
-                    </p>
-                </div>
-            </div>
+  <main>
+    <div class="about-card">
+      <div class="about-card-inner">
+        <img src="me.png" width="300" alt="Melissa Regalado" class="about-image">
+        <div class="about-text">
+          <h2 class="section-heading">%% About Me %%</h2>
+          <p>
+            My name is Melissa Regalado, a Computer Engineering student at Boston University. I am passionate about designing systems that integrate hardware and software to create a meaningful impact. 
+            Additionally, I have a deep interest in semiconductor technologies and quantum physics and am eager to learn about how these emerging practices mold the future of computing and electronics.
+            I am also interested in projects involving medical devices, assistive technology, and energy-efficient design that promote sustainable energy solutions.
+            My love of the visual arts shapes how I approach engineering challenges with creativity, clarity, and impact.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <section id="projects">
+      <h2 class="section-heading">%% Projects %%</h2>
+      <div class="project-list">
+        <div class="project-card">
+          <a href="ek131.html">
+            <img src="porfolio_photos/EK131/iso_view.png">
+            <h3>Room Temperature Sensor</h3>
+          </a>
         </div>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-heading">%% Projects %%</h2>
-            <div class="project-list">
-                <div class="project-card">
-                    <a href="ek131.html">
-                        <img src="porfolio_photos/EK131/iso_view.png">
-                        <h3>Room Temperature Sensor</h3>
-                    </a>
-                </div>
+        <div class="project-card">
+          <a href="ek210.html">
+            <img src="porfolio_photos/EK210/main.png">
+            <h3>Assistive Eating Utensil</h3>
+          </a>
+        </div>
 
-                <div class="project-card">
-                    <a href="ek210.html">
-                        <img src="porfolio_photos/EK210/main.png">
-                        <h3>Assistive Eating Utensil</h3>
-                    </a>
-                </div>
+        <div class="project-card">
+          <a href="ek301.html">
+            <img src="porfolio_photos/EK301/main.png">
+            <h3>Truss Bridge</h3>
+          </a>
+        </div>
 
-                <div class="project-card">
-                    <a href="ek301.html">
-                        <img src="porfolio_photos/EK301/main.png">
-                        <h3>Truss Bridge</h3>
-                    </a>
-                </div>
+        <div class="project-card">
+          <a href="ec311.html">
+            <img src="porfolio_photos/EC311/fpga_photo.png">
+            <h3>Image Processing using UART and FPGA</h3>
+          </a>
+        </div>
 
-                <div class="project-card">
-                    <a href="ec311.html">
-                        <img src="porfolio_photos/EC311/fpga_photo.png">
-                        <h3>Image Processing using UART and FPGA</h3>
-                    </a>
-                </div>
+        <div class="project-card">
+          <a href="ec571.html">
+            <img src="porfolio_photos/EC571/HBLSA.png">
+            <h3>Replication and Analysis of Low-Power HBLSA SRAM</h3>
+          </a>
+        </div>
+      </div>
+    </section>
 
-                <div class="project-card">
-                    <a href="ec571.html">
-                        <img src="porfolio_photos/EC571/HBLSA.png">
-                        <h3>Replication and Analysis of Low-Power HBLSA SRAM</h3>
-                    </a>
-                </div>
-            </div>
-        </section>
+    <section id="contact">
+      <div class="contact-card">
+        <h2 class="section-heading">%% My Contact %%</h2>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:mregal@bu.edu">mregal@bu.edu</a></p>
+          <p>GitHub: <a href="https://github.com/melreg6/portfolio">Click Here!</a></p>
+          <p>LinkedIn: <a href="https://www.linkedin.com/in/melissa-regalado-bb7009289/">Click Here!</a></p>
+          <p>Location: Chicago, IL & Boston, MA</p>
+          <p><a href="Resume_8_4_Melissa_Regalado.pdf" download>📄 Download My Resume</a></p>
+        </div>
+      </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="contact-card">
-                <h2 class="section-heading">%% My Contact %%</h2>
-                <div class="contact-info">
-                    <p>Email: <a href="mailto:mregal@bu.edu">mregal@bu.edu</a></p>
-                    <p>GitHub: <a href="https://github.com/melreg6/portfolio">Click Here!</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/melissa-regalado-bb7009289/">Click Here!</a></p>
-                    <p>Location: Chicago, IL & Boston, MA</p>
-                    <p><a href="Resume_8_4_Melissa_Regalado.pdf" download>📄 Download My Resume</a></p>
-                </div>
-            </div>
-        </section>
+    <section id="work-exper">
+      <div class="work-card">
+        <h2 class="section-heading">%% My Past Work Experience %%</h2>
+        <div style="text-align: center;">
+          <img src="com_pixel.gif" width="100">
+        </div>
+        <p><a href="workexper.html">Click Here!</a></p>
+      </div>
+    </section>
+  </main>
 
-        <!-- Work Experience Section -->
-        <section id="work-exper">
-            <div class="work-card">
-                <h2 class="section-heading">%% My Past Work Experience %%</h2>
-                <div style="text-align: center;">
-                    <img src="com_pixel.gif" width="100">
-                </div>
-                <p><a href="workexper.html">Click Here!</a></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Melissa Regalado</p>
-    </footer>
+  <footer>
+    <p>&copy; 2025 Melissa Regalado</p>
+  </footer>
 
 </body>
 </html>
