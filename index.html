@@ -11,13 +11,25 @@
     <!-- Styles -->
     <style>
         body {
-            background-image: url('tile.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             background-attachment: fixed;
             margin: 0;
             font-family: "Roboto Mono", monospace;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .background-iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            border: none;
+            pointer-events: none;
         }
 
         header {
@@ -49,7 +61,6 @@
             text-align: center;
         }
 
-        /* NAV */
         nav {
             font-family: "Pixelify Sans", sans-serif;
             font-size: 42px;
@@ -57,7 +68,6 @@
             font-weight: 400;
         }
 
-        /* ABOUT CARD */
         .about-card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -101,7 +111,6 @@
             margin-bottom: 10px;
         }
 
-        /* PROJECTS */
         #projects {
             padding: 40px;
             text-align: center;
@@ -140,7 +149,6 @@
             font-family: "Roboto Mono", monospace;
         }
 
-        /* CONTACT CARD */
         .contact-card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -174,7 +182,6 @@
             text-decoration: underline;
         }
 
-        /* WORK CARD */
         .work-card {
             background-color: #ffffff;
             border-radius: 12px;
@@ -203,6 +210,13 @@
 
 <body>
 
+    <!-- Fullscreen Background Iframe -->
+    <iframe class="background-iframe"
+        src="https://assets.pinterest.com/ext/embed.html?id=211174978100277"
+        frameborder="0"
+        scrolling="no">
+    </iframe>
+
     <header>
         <h1>Melissa Regalado</h1>
         <h2>Engineering Portfolio</h2>
@@ -224,7 +238,7 @@
                         My name is Melissa Regalado, a Computer Engineering student at Boston University. I am passionate about designing systems that integrate hardware and software to create a meaningful impact. 
                         Additionally, I have a deep interest in semiconductor technologies and quantum physics and am eager to learn about how these emerging practices mold the future of computing and electronics.
                         I am also interested in projects involving medical devices, assistive technology, and energy-efficient design that promote sustainable energy solutions.
-                         My love of the visual arts shapes how I approach engineering challenges with creativity, clarity, and impact.
+                        My love of the visual arts shapes how I approach engineering challenges with creativity, clarity, and impact.
                     </p>
                 </div>
             </div>
@@ -290,15 +304,14 @@
             <div class="work-card">
                 <h2 class="section-heading">%% My Past Work Experience %%</h2>
                 <div style="text-align: center;">
-                <img src="com_pixel.gif" width="100">
+                    <img src="com_pixel.gif" width="100">
                 </div>
                 <p><a href="workexper.html">Click Here!</a></p>
-                
             </div>
         </section>
     </main>
 
-    <footer style="text-align: center;" >
+    <footer>
         <p>&copy; 2025 Melissa Regalado</p>
     </footer>
 
