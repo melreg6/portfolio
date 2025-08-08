@@ -1,26 +1,24 @@
-/* Reset and Base Layout */
+/* Base Reset */
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 200vh; /* force scroll for testing */
+  min-height: 200vh;
   font-family: "Roboto Mono", monospace;
   overflow-x: hidden;
   overflow-y: auto;
   color: #000;
 }
 
-/* Fullscreen Animated GIF Background */
-html::before, body::before {
-  content: "";
+/* Fullscreen Background Video */
+.background-video {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
   width: 100vw;
-  background: url('background.gif') center center / cover no-repeat;
-  z-index: -3;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2;
   pointer-events: none;
-  background-color: #fff;
 }
 
 /* Header Styles */
@@ -32,8 +30,8 @@ header h1 {
 }
 
 header h2, header h3 {
-  font-family: "Pixelify Sans", sans-serif;
   text-align: center;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 header h2 {
@@ -150,7 +148,7 @@ nav {
   margin: 0;
 }
 
-/* Contact Card */
+/* Contact Section */
 .contact-card {
   background-color: #ffffff;
   border-radius: 12px;
@@ -182,7 +180,7 @@ nav {
   text-decoration: underline;
 }
 
-/* Work Experience Card */
+/* Work Experience Section */
 .work-card {
   background-color: #ffffff;
   border-radius: 12px;
