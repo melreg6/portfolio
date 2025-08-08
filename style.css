@@ -20,6 +20,7 @@ html::before, body::before {
   background: url('background.gif') center center / cover no-repeat;
   z-index: -3;
   pointer-events: none;
+  background-color: #fff;
 }
 
 /* Header Styles */
