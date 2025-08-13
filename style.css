@@ -69,8 +69,8 @@ nav {
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Small cards that auto-fit */
-  gap: 10px; /* smaller gap between cards */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
+  gap: 10px; 
   margin: 15px 0;
 }
 
