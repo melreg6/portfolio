@@ -208,8 +208,8 @@ footer {
 
 .about-image {
   border-radius: 50%;       
-  border: 5px solid #000;    
+  border: 5px solid #ffffff;    
   object-fit: cover;        
-  width: 300px;              
-  height: 300px;           
+  width: 150px;              
+  height: 1500px;           
 }
