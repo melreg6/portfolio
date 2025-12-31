@@ -3,128 +3,115 @@
 
 <head>
   <meta charset="UTF-8">
+
   <title>Low-Power HBLSA SRAM</title>
+
+  <!-- Global Styles + Fonts -->
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      font-family: 'Pixelify Sans', sans-serif;
-      text-align: center;
-      font-weight: 400;
-    }
-
-    a {
-      font-family: 'Pixelify Sans', sans-serif;
-      display: block;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    h2, h3 {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-    }
-  </style>
- <link rel="stylesheet" href="style.css" />
-
 </head>
-
- <!-- Back Video -->
-  <video autoplay loop muted playsinline class="background-video">
-    <source src="gen_mot_pic.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
 
 <body>
 
+  <!-- same background as index -->
+  <div class="background-gif"></div>
+
+  <header>
+    <h1>%% Replication and Analysis of Low-Power HBLSA SRAM %%</h1>
+  </header>
+
   <main>
-    <h1>  %% Replication and Analysis of Low-Power HBLSA SRAM %% </h1>
+    <!-- CENTER BAR / CARD -->
+    <div class="page-card">
 
-    <a href="index.html">&larr; Back to Main</a>
+      <!-- Back link -->
+      <div class="page-back-link">
+        <a href="index.html">&larr; Back to Main</a>
+      </div>
 
+      <!-- Main graphic -->
+      <section class="page-section">
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC571/HBLSA.png" alt="HBLSA SRAM Block Diagram">
+        </div>
+      </section>
 
+      <!-- Key Summary -->
+      <section class="page-section">
+        <h2>Key Summary</h2>
+        <h3>
+          Simulated a 6T SRAM using a Hierarchical Bit-Line and Local Sense Amplifier (HBLSA) architecture.
+          The HBLSA structure isolates high-capacitance bit-lines using local sense amplifiers to lower dynamic power
+          and was directly compared against a conventional 6T SRAM design under identical test conditions.
+        </h3>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC571/HBLSA.png" style="width:400px;" >
-    </div>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC571/6T.png" alt="Conventional 6T SRAM">
+          <img src="porfolio_photos/EC571/LSA.png" alt="Local Sense Amplifier Structure">
+        </div>
+      </section>
 
-    <h2>Key Summary</h2>
-    <ul>
-      <li>Simulated a 6T SRAM using a Hierarchical Bit-Line and Local Sense Amplifier (HBLSA) architecture.</li>
-      <li>HBLSA structure isolates high-capacitance bit-lines using local sense amplifiers to lower dynamic power.</li>
-      <li>Compared power and performance against a conventional 6T SRAM using identical test conditions.</li>
-    </ul>
+      <!-- HBLSA Architecture -->
+      <section class="page-section">
+        <h2>HBLSA Architecture</h2>
+        <h3>
+          - Hierarchical layout minimizes bit-line capacitance.<br>
+          - Local Word Line (LWL) selects specific memory cells within a small group.<br>
+          - Global Word Line (GWL) decouples unused groups, conserving dynamic power.<br>
+          - Local Sense Amplifiers (LSAs) amplify sub-bit-line signals during read and write operations.
+        </h3>
 
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC571/read.png" alt="HBLSA Read Operation">
+          <img src="porfolio_photos/EC571/write.png" alt="HBLSA Write Operation">
+        </div>
+      </section>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC571/6T.png" style="width:400px;" >
-      <img src="porfolio_photos/EC571/LSA.png" style="width:400px;" >
-    </div>
+      <!-- Simulation Results -->
+      <section class="page-section">
+        <h2>Simulation Results</h2>
+        <h3>
+          <strong>Write Operation</strong><br>
+          - HBLSA SRAM: 60&nbsp;µA vs Conventional: 90&nbsp;µA<br>
+          - Power savings: 33.33%<br><br>
+          <strong>Read Operation</strong><br>
+          - HBLSA SRAM: 16&nbsp;µA vs Conventional: 35&nbsp;µA<br>
+          - Power savings: 54.29%
+        </h3>
 
-    <h2>HBLSA Architecture</h2>
-    <h3>
-      - Hierarchical layout minimizes bit-line capacitance.<br>
-      - Local Word Line (LWL) selects specific memory cells.<br>
-      - Global Word Line (GWL) decouples unused groups, conserving power.<br>
-      - Local Sense Amplifiers amplify sub-bit line signals during write operations.
-    </h3>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC571/table.png" alt="Power Comparison Table">
+        </div>
+      </section>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC571/read.png" style="width:400px;" >
-      <img src="porfolio_photos/EC571/write.png" style="width:400px;" >
-    </div>
-  
+      <!-- Design Contributions -->
+      <section class="page-section">
+        <h2>Design Contributions</h2>
+        <h3>
+          - Melissa Regalado led the conceptual design, including architectural planning and schematic breakdown.<br>
+          - Collaborated with Lina Lin Wei, who supported simulation implementation and waveform validation.<br>
+          - The team tuned transistor sizes, designed and simulated precharge and sense circuits, and performed
+            comparative analysis between HBLSA and conventional SRAM.
+        </h3>
+      </section>
 
-    <h2>Simulation Results</h2>
-    <h3>
-      <strong>Write Operation</strong><br>
-      - HBLSA SRAM: 60μA vs Conventional: 90μA<br>
-      - Power savings: 33.33%<br><br>
-      <strong>Read Operation</strong><br>
-      - HBLSA SRAM: 16μA vs Conventional: 35μA<br>
-      - Power savings: 54.29%<br>
-    </h3>
+      <!-- Conclusion -->
+      <section class="page-section">
+        <h2>Conclusion</h2>
+        <h3>
+          The HBLSA-SRAM demonstrated significant dynamic power reduction while maintaining full-swing operation
+          and acceptable noise margins. The hierarchical bit-line design proved effective for scaling SRAM arrays
+          in low-power systems where energy efficiency is critical.
+        </h3>
+      </section>
 
-
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC571/table.png" style="width:400px;" >
-      
-    </div>
-
-
-    <h2>Design Contributions</h2>
-    <h3>
-      - Melissa Regalado led the conceptual design, including architectural planning and schematic breakdown.<br>
-      - Collaborated with Lina Lin Wei, who supported simulation implementation and waveform validation.<br>
-      - The team tuned transistor sizes, designed and simulated precharge/sense circuits, and performed comparative analysis.
-    </h3>
-
-    <h2>Conclusion</h2>
-    <h3>
-      The HBLSA-SRAM demonstrated significant dynamic power reduction while maintaining full-swing operation and noise margins. The hierarchical design proved effective for scaling SRAM arrays in low-power systems.
-    </h3>
-
+    </div> <!-- end .page-card -->
   </main>
 
-</body>
+  <footer>
+    <p>&copy; 2025 Melissa Regalado</p>
+  </footer>
 
+</body>
 </html>

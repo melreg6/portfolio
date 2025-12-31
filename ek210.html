@@ -4,171 +4,172 @@
 <head>
   <meta charset="UTF-8">
   <title>Assistive Eating Utensil</title>
+
+  <!-- Global Styles + Fonts -->
+  <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      margin: 0;
-      padding: 20px;
-    }
-
-    h1 {
-      font-family: 'Pixelify Sans', sans-serif;
-      text-align: center;
-      font-weight: 400;
-    }
-
-    a {
-      font-family: 'Pixelify Sans', sans-serif;
-      display: block;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .centered {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 20px;
-    }
-
-    figure {
-      text-align: center;
-      margin: 0 auto 20px;
-    }
-
-    figcaption {
-      font-size: 0.9em;
-      margin-top: 8px;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      text-align: center;
-    }
-
-    h2, h3 {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
-    }
-  </style>
- <link rel="stylesheet" href="style.css" />
-
 </head>
-
- <!-- Back Video -->
-  <video autoplay loop muted playsinline class="background-video">
-    <source src="gen_mot_pic.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
 
 <body>
 
-  <main>
+  <!-- same background as main site -->
+  <div class="background-gif"></div>
+
+  <header>
     <h1>%% Assistive Eating Utensil %%</h1>
+  </header>
 
-    <a href="index.html">&larr; Back to Main</a>
+  <main>
+    <!-- CENTER BAR / CARD -->
+    <div class="page-card">
 
-    <div class="centered">
-      <img src="porfolio_photos/EK210/explosion.png" alt="Image 1" width="400" height="400">
-      <img src="porfolio_photos/EK210/explosion_2.png" alt="Image 2" width="400" height="400">
-    </div>
+      <!-- Back link -->
+      <div class="page-back-link">
+        <a href="index.html">&larr; Back to Main</a>
+      </div>
 
-    <figure>
-      <video width="400" controls>
-        <source src="porfolio_photos/EK210/210_vid.mp4" type="video/mp4">
-        Your browser does not support HTML video.
-      </video>
-    </figure>
+      <!-- Hero images -->
+      <section class="page-section">
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK210/explosion.png" alt="Assistive Utensil Exploded View">
+          <img src="porfolio_photos/EK210/explosion_2.png" alt="Assistive Utensil Exploded View 2">
+        </div>
+      </section>
 
-    <figure>
-      <img src="porfolio_photos/EK210/materials.png" width="600">
-    </figure>
+      <!-- Demo video -->
+      <section class="page-section">
+        <h2>Demo</h2>
+        <div class="page-image-row">
+          <video width="560" controls>
+            <source src="porfolio_photos/EK210/210_vid.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+        </div>
+      </section>
 
-    <h2>Key Specifications</h2>
-    <ul>
-      <li>6 oz total weight</li>
-      <li>2.6 hour operating time</li>
-      <li>194 mA current draw</li>
-      <li>9V battery</li>
-      <li>10.5 × 1.875 × 2.125 inches</li>
-    </ul>
+      <!-- Materials -->
+      <section class="page-section">
+        <h2>Materials & Layout</h2>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK210/materials.png" alt="Materials and Layout">
+        </div>
+      </section>
 
-    <h2>Mechanically Actuated Assistive Eating Utensil</h2>
+      <!-- Key Specifications -->
+      <section class="page-section">
+        <h2>Key Specifications</h2>
+        <h3>
+          6 oz total weight • 2.6 hour operating time • 194 mA current draw • 9V battery •
+          10.5 × 1.875 × 2.125 inches
+        </h3>
+      </section>
 
-    
+      <!-- Project description -->
+      <section class="page-section">
+        <h2>Mechanically Actuated Assistive Eating Utensil</h2>
+        <h3>
+          Designed a portable, servo-actuated eating utensil to assist individuals with reduced dexterity or involuntary
+          hand movements. The device stabilizes the utensil head using real-time motion data from an accelerometer,
+          helping users eat with greater control and independence.
+        </h3>
+      </section>
 
-    <h3>
-      Designed a portable, servo-actuated eating utensil to assist individuals with reduced dexterity or involuntary hand movements.
-      The device stabilizes the utensil head using real-time motion data from an accelerometer, helping users eat with greater control and independence.
-    </h3>
+      <!-- Key Features -->
+      <section class="page-section">
+        <h2>Key Features</h2>
+        <h3>
+          - Adafruit ADXL343 accelerometer and Arduino Nano for real-time motion sensing<br>
+          - Dual servo motors mounted perpendicularly to adjust pitch and roll<br>
+          - Compact housing with 3D-printed structure and secure hand strap<br>
+          - Easy-access battery cap and large, user-friendly activation button
+        </h3>
+      </section>
 
-    <h3><strong>Key Features</strong><br>
-      - Adafruit ADXL343 accelerometer and Arduino Nano for real-time motion sensing<br>
-      - Dual servo motors mounted perpendicularly to adjust pitch and roll<br>
-      - Compact housing with 3D-printed structure and secure hand strap<br>
-      - Easy-access battery cap and large, user-friendly activation button
-    </h3>
+      <!-- Performance Metrics -->
+      <section class="page-section">
+        <h2>Performance Metrics</h2>
+        <h3>
+          - 76% reliability in motion counteraction (roll), 100% in pitch<br>
+          - Runtime: 2.6 hours on 9V battery<br>
+          - Weight: 6.0 oz<br>
+          - Cost: $86.25 (under $100 target)<br>
+          - Not food-safe (PLA material); waterproofing and material upgrades planned
+        </h3>
+      </section>
 
-    <h3><strong>Performance Metrics</strong><br>
-      - 76% reliability in motion counteraction (roll), 100% in pitch<br>
-      - Runtime: 2.6 hours on 9V battery<br>
-      - Weight: 6.0 oz<br>
-      - Cost: $86.25 (under $100 target)<br>
-      - Not food-safe (PLA material); waterproofing and material upgrades planned
-    </h3>
+      <!-- Glass box prototype -->
+      <section class="page-section">
+        <h2>Prototyping & Testing</h2>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK210/glassbox.png" alt="Testing Setup">
+        </div>
+      </section>
 
-    
+      <!-- Plots -->
+      <section class="page-section">
+        <h2>Motion Performance</h2>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK210/pitchbar.png" alt="Pitch Accuracy">
+          <img src="porfolio_photos/EK210/rollbar.png" alt="Roll Rate">
+        </div>
+        <p style="font-size: 0.9rem; margin-top: 8px;">
+          Achieved 100% pitch accuracy and 76% roll rate using an MPU6050 motion sensor.
+        </p>
+      </section>
 
-    <figure>
-      <img src="porfolio_photos/EK210/glassbox.png" width="600">
-    </figure>
+      <!-- Code flow -->
+      <section class="page-section">
+        <h2>Control Logic</h2>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK210/code_flow.png" alt="Code Flow Diagram">
+        </div>
+        <h3>
+          Arduino control logic converts accelerometer data into servo commands, filtering motion input to avoid
+          overreacting to intentional user movements while compensating for tremors.
+        </h3>
+      </section>
 
-    <div class="centered">
-      <img src="porfolio_photos/EK210/pitchbar.png" width="400" alt="Pitch Accuracy">
-      <img src="porfolio_photos/EK210/rollbar.png" width="400" alt="Roll Rate">
-    </div>
-    <p style="text-align:center; font-size: 0.9em;">
-      Achieved 100% pitch accuracy and 76% roll rate using MPU6050 motion sensor.
-    </p>
+      <!-- Technical Contributions -->
+      <section class="page-section">
+        <h2>Technical Contributions</h2>
+        <h3>
+          - Developed Arduino control logic to convert accelerometer data into servo motion<br>
+          - Filtered motion input to reduce reaction to voluntary movements<br>
+          - Assisted in sensor integration and dual-accelerometer testing
+        </h3>
+      </section>
 
-    <figure>
-      <img src="porfolio_photos/EK210/code_flow.png" width="400">
-    </figure>
+      <!-- Lessons Learned -->
+      <section class="page-section">
+        <h2>Lessons Learned</h2>
+        <h3>
+          - Adapted to hardware and sensor constraints by switching from MPU6050 to ADXL343<br>
+          - Gained experience in collaborative design, time management, and iterative testing<br>
+          - Learned to balance accessibility, performance, and design trade-offs in engineering
+        </h3>
+      </section>
 
+      <!-- Team -->
+      <section class="page-section">
+        <h2>Team</h2>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK210/ppl.png" alt="Team Photo 1">
+          <img src="porfolio_photos/EK210/ppl2.png" alt="Team Photo 2">
+        </div>
+        <h3>
+          Teammates included Riley Applebaum, Madison McDonald, and Valentina Vidal.
+          McDonald led housing design and Vidal focused on assembly and circuitry.
+          Applebaum and Melissa collaborated on the circuit hardware and code.
+        </h3>
+      </section>
 
-    <h3><strong>Technical Contributions</strong><br>
-      - Developed Arduino control logic to convert accelerometer data into servo motion<br>
-      - Filtered motion input to reduce reaction to voluntary movements<br>
-      - Assisted in sensor integration and dual-accelerometer testing
-    </h3>
-
-    <h3><strong>Lessons Learned</strong><br>
-      - Adapted to hardware and sensor constraints by switching from MPU6050 to ADXL343<br>
-      - Gained experience in collaborative design, time management, and iterative testing<br>
-      - Learned to balance accessibility, performance, and design trade-offs in engineering
-    </h3>
-
-    <figure>
-      <img src="porfolio_photos/EK210/ppl.png" width="500">
-      <img src="porfolio_photos/EK210/ppl2.png" width="500">
-      <figcaption>
-        Teammates included Riley Applebaum, Madison McDonald, Valentina Vidal.<br>
-        McDonald led housing design and Vidal focused on assembly and circuitry.<br>
-        Applebaum and I collaborated on the circuit's hardware and code.
-      </figcaption>
-    </figure>
+    </div> <!-- end page-card -->
   </main>
+
+  <footer>
+    <p>&copy; 2025 Melissa Regalado</p>
+  </footer>
 
 </body>
 </html>

@@ -1,136 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
   <meta charset="UTF-8">
-  <title>Room Temperature Sensor</title>
+
+  <title>Room Temperature Monitor</title>
+
+  <!-- Global Styles + Fonts -->
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      text-align: center;
-      margin: 0;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-family: 'Pixelify Sans', sans-serif;
-      font-weight: 400;
-      margin-top: 30px;
-    }
-
-    h2 {
-      margin-top: 40px;
-    }
-
-    h3 {
-      font-weight: 400;
-      max-width: 800px;
-      margin: 10px auto;
-      line-height: 1.6;
-    }
-
-    figure {
-      margin: 30px 0;
-    }
-
-    img {
-      max-width: 400px;
-      width: 100%;
-      margin: 10px;
-    }
-
-    a {
-      font-family: 'Pixelify Sans', sans-serif;
-      display: inline-block;
-      margin-top: 10px;
-      margin-bottom: 30px;
-      text-decoration: none;
-    }
-  </style>
- <link rel="stylesheet" href="style.css" />
-
 </head>
 
- <!-- Back Video -->
-  <video autoplay loop muted playsinline class="background-video">
-    <source src="gen_mot_pic.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-
 <body>
-  <h1 style="font-family: 'Pixelify Sans', sans-serif; text-align: center; font-weight: 400;">%% Room Temperature Monitor %%</h1>
+
+  <!-- background like main page -->
+  <div class="background-gif"></div>
+
+  <header>
+    <h1>%% Room Temperature Monitor %%</h1>
+  </header>
+
+  <main>
+
+    <!-- CENTER BAR CARD -->
+    <div class="page-card">
+
+      <!-- Back link -->
+      <div class="page-back-link">
+        <a href="index.html">&larr; Back to Main</a>
+      </div>
+
+      <!-- Main Image -->
+      <section class="page-section">
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK131/iso_view.png" alt="Room Temperature Monitor">
+        </div>
+      </section>
+
+      <!-- Overview -->
+      <section class="page-section">
+        <h2>Overview</h2>
+        <h3>
+          This room temperature monitor, built for EK131, uses an Arduino Uno to display temperature readings and trigger alerts when the room temperature falls outside a set range (20–25°C). The system includes a green/red LED, a Piezo buzzer that plays a melody, and a 16x2 I2C LCD screen.
+        </h3>
+
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK131/top.png" alt="Top View">
+          <img src="porfolio_photos/EK131/cold.png" alt="Cold Warning">
+        </div>
+      </section>
+
+      <!-- Functionality -->
+      <section class="page-section">
+        <h2>Functionality</h2>
+        <h3>
+          The TMP36 sensor provides analog voltage values, which are converted to temperature using Arduino code. The LCD updates every 1–2 seconds. If the temperature is too hot or cold, a red LED blinks and the buzzer plays the Star Wars theme. If in range, a green LED remains on.
+        </h3>
+      </section>
+
+      <!-- Design Features -->
+      <section class="page-section">
+        <h2>Design Features</h2>
+        <h3>
+          Powered by a 9V battery and housed in a custom enclosure with a 3D-printed battery holder, the circuit uses durable wiring (soldering, shrink wrap, and spade connectors) for reliability. A two-way switch enables power control, and standard 1kΩ resistors protect the LEDs.
+        </h3>
+
+        <div class="page-image-row">
+          <img src="porfolio_photos/EK131/circuit.png" alt="Circuit Build">
+          <img src="porfolio_photos/EK131/circuit_diagram.png" alt="Circuit Diagram">
+        </div>
+      </section>
+
+      <!-- Limitations -->
+      <section class="page-section">
+        <h2>Limitations</h2>
+        <h3>
+          The 9V battery provides only ~5.6 hours of operation, making long-term use impractical without external power. The enclosure is also bulky, which could limit placement in small spaces or pet enclosures.
+        </h3>
+      </section>
+
+      <!-- Key Takeaways -->
+      <section class="page-section">
+        <h2>Key Takeaways</h2>
+        <h3>
+          The prototype accurately monitors and displays room temperature, functioning like a smart alert system. Improvements could include reducing size and switching to a longer-lasting power source such as USB power or rechargeable Li-ion battery packs.
+        </h3>
+      </section>
+
+    </div> <!-- end page-card -->
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Melissa Regalado</p>
+  </footer>
+
 </body>
-
-<main>
-  <div style="text-align: center; margin: 20px;">
-    <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;">&larr; Back to Main</a>
-  </div>
-
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK131/iso_view.png" style="width:400px;">
-    </figure>
-  </div>
-
-
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Overview</h2>
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    This room temperature monitor, built for EK131, uses an Arduino Uno to display temperature readings and trigger alerts when the room temperature falls outside a set range (20–25°C). The system includes a green/red LED, a Piezo buzzer that plays a melody, and a 16x2 I2C LCD screen.
-  </h3>
-
-
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK131/top.png" style="width:400px;">
-    </figure>
-  </div>
-
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK131/cold.png" style="width:400px;">
-    </figure>
-  </div>
-
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Functionality</h2>
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    The TMP36 sensor provides analog voltage values, which are converted to temperature using Arduino code. The LCD updates every 1–2 seconds. If the temperature is too hot or cold, a red LED blinks and the buzzer plays the Star Wars theme. If in range, a green LED remains on.
-  </h3>
-
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Design Features</h2>
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    Powered by a 9V battery and housed in a custom enclosure with a 3D-printed battery holder, the circuit uses durable wiring (soldering, shrink wrap, spade connectors) for reliability. A two-way switch enables power control, and standard 1kΩ resistors protect the LEDs.
-  </h3>
-
-
-  <div>
-    <figure style="text-align: center;">
-      <img src="porfolio_photos/EK131/circuit.png" style="width:400px;">
-      <img src="porfolio_photos/EK131/circuit_diagram.png" style="width:400px;">
-    </figure>
-  </div>
-
-  
-
-  
-
-
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Limitations</h2>
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    The 9V battery provides only ~5.6 hours of operation, making long-term use impractical without external power. The enclosure is also bulky, which could limit placement in small spaces or pet enclosures.
-  </h3>
-
-  <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Key Takeaways</h2>
-  <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-    The prototype accurately monitors and displays room temperature, functioning like a smart alert system. Improvements could include reducing size and switching to a longer-lasting power source such as USB power or rechargeable Li-ion battery packs.
-  </h3>
-
-  
-</main>
-
 </html>

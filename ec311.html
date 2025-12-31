@@ -3,133 +3,113 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Room Temperature Sensor</title>
+  <title>Image Processing using UART and FPGA</title>
+
+  <!-- Global Styles + Fonts -->
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Roboto Mono', monospace;
-      text-align: center;
-      margin: 0;
-      padding: 0 20px;
-    }
-
-    h1 {
-      font-family: 'Pixelify Sans', sans-serif;
-      font-weight: 400;
-      margin-top: 30px;
-    }
-
-    h2 {
-      margin-top: 40px;
-    }
-
-    h3 {
-      font-weight: 400;
-      max-width: 800px;
-      margin: 10px auto;
-      line-height: 1.6;
-    }
-
-    figure {
-      margin: 30px 0;
-    }
-
-    img {
-      max-width: 400px;
-      width: 100%;
-      margin: 10px;
-    }
-
-    a {
-      font-family: 'Pixelify Sans', sans-serif;
-      display: inline-block;
-      margin-top: 10px;
-      margin-bottom: 30px;
-      text-decoration: none;
-    }
-  </style>
- <link rel="stylesheet" href="style.css" />
-
 </head>
-
- <!-- Back Video -->
-  <video autoplay loop muted playsinline class="background-video">
-    <source src="gen_mot_pic.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
 <body>
 
-  <h1 style="font-family: 'Pixelify Sans', sans-serif; font-weight: 400; text-align: center;">
-    %% Image Processing using UART and FPGA %%
-  </h1>
+  <!-- same background as index -->
+  <div class="background-gif"></div>
+
+  <header>
+    <h1>%% Image Processing using UART and FPGA %%</h1>
+  </header>
 
   <main>
-    <div style="text-align: center; margin: 20px;">
-      <a href="index.html" style="font-family: 'Pixelify Sans', sans-serif;">&larr; Back to Main</a>
-    </div>
+    <!-- CENTER BAR / CARD -->
+    <div class="page-card">
 
-    <div style="text-align: center;">
-      <iframe width="420" height="315"
-        src="https://www.youtube.com/embed/eB2KplseXf0"
-        allowfullscreen>
-      </iframe>
-      <p style="font-family: 'Roboto Mono', sans-serif;">
-        If the video doesn't load, you can watch it directly on 
-        <a href="https://www.youtube.com/watch?v=eB2KplseXf0" target="_blank" rel="noopener noreferrer">YouTube</a>.
-      </p>
-    </div>
+      <!-- Back link -->
+      <div class="page-back-link">
+        <a href="index.html">&larr; Back to Main</a>
+      </div>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Project Overview</h2>
-    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      Built a hardware-accelerated image processing system using UART communication between MATLAB and an FPGA.
-      The system performs darkening, brightening, and inversion transformations on images in real time.
-    </h3>
+      <!-- Video -->
+      <section class="page-section">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/eB2KplseXf0"
+          allowfullscreen>
+        </iframe>
+        <p>
+          If the video doesn't load, you can watch it directly on
+          <a href="https://www.youtube.com/watch?v=eB2KplseXf0" target="_blank" rel="noopener noreferrer">YouTube</a>.
+        </p>
+      </section>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/fpga_photo.png" style="width:400px;" alt="FPGA Setup">
-    </div>
+      <!-- Project Overview -->
+      <section class="page-section">
+        <h2>Project Overview</h2>
+        <h3>
+          Built a hardware-accelerated image processing system using UART communication between MATLAB and an FPGA.
+          The system performs darkening, brightening, and inversion transformations on images in real time.
+        </h3>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">System Workflow</h2>
-    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      MATLAB reads and converts the image into 8-bit RGB values, sending them byte-by-byte over UART to the FPGA.
-      The FPGA uses FSMs to receive, process, and return transformed pixels back to MATLAB for display.
-    </h3>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC311/fpga_photo.png" alt="FPGA Setup">
+        </div>
+      </section>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/flow.png" style="width:400px;" alt="System Flow">
-      <img src="porfolio_photos/EC311/codeFlow.png" style="width:400px;" alt="Code Structure">
-    </div>
+      <!-- System Workflow -->
+      <section class="page-section">
+        <h2>System Workflow</h2>
+        <h3>
+          MATLAB reads and converts the image into 8-bit RGB values, sending them byte-by-byte over UART to the FPGA.
+          The FPGA uses FSMs to receive, process, and return transformed pixels back to MATLAB for display.
+        </h3>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Features</h2>
-    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      - 3 image transformations: lighten, darken, invert<br>
-      - Hardware control via Basys 3 board switches<br>
-      - Verilog modules for receiver, transmitter, and FSM-based control<br>
-      - MATLAB GUI for visualization and UART interfacing
-    </h3>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC311/flow.png" alt="System Flow">
+          <img src="porfolio_photos/EC311/codeFlow.png" alt="Code Structure">
+        </div>
+      </section>
 
-    <div style="text-align: center;">
-      <img src="porfolio_photos/EC311/outputs.png" style="width:400px;" alt="Output Side-by-Side">
-      <img src="porfolio_photos/EC311/closer_output.png" style="width:400px;" alt="Closer Output">
-    </div>
+      <!-- Features -->
+      <section class="page-section">
+        <h2>Features</h2>
+        <h3>
+          - 3 image transformations: lighten, darken, invert<br>
+          - Hardware control via Basys 3 board switches<br>
+          - Verilog modules for receiver, transmitter, and FSM-based control<br>
+          - MATLAB GUI for visualization and UART interfacing
+        </h3>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Challenges & Learnings</h2>
-    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      A major challenge was enabling more complex color filtering using UART. 
-      Continuous transmission and live reading by MATLAB made buffered storage difficult, resulting in black images.
-      Future improvements include implementing FIFO-based buffering and better synchronization strategies.
-    </h3>
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC311/outputs.png" alt="Output Side-by-Side">
+          <img src="porfolio_photos/EC311/closer_output.png" alt="Closer Output">
+        </div>
+      </section>
 
-    <h2 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">Team Members</h2>
-    <h3 style="font-family: 'Roboto Mono', sans-serif; text-align: center;">
-      Varsha Athreya, Melissa Regalado, Punnisa Amornsirikul, and Conor Holland Ruane
-    </h3>
+      <!-- Challenges -->
+      <section class="page-section">
+        <h2>Challenges &amp; Learnings</h2>
+        <h3>
+          A major challenge was enabling more complex color filtering using UART. 
+          Continuous transmission and live reading by MATLAB made buffered storage difficult, resulting in black images.
+          Future improvements include implementing FIFO-based buffering and better synchronization strategies.
+        </h3>
+      </section>
 
+      <!-- Team -->
+      <section class="page-section">
+        <h2>Team Members</h2>
+        <h3>
+          Varsha Athreya, Melissa Regalado, Punnisa Amornsirikul, and Conor Holland Ruane
+        </h3>
+      </section>
+
+    </div> <!-- end .page-card -->
   </main>
+
+  <footer>
+    <p>&copy; 2025 Melissa Regalado</p>
+  </footer>
 
 </body>
 </html>

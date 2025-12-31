@@ -1,134 +1,154 @@
-/* Base Reset */
+/* -------------------- */
+/* global reset / base  */
+/* -------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
-  min-height: 200vh;
+  min-height: 100vh;
   font-family: "Roboto Mono", monospace;
-  overflow-x: hidden;
-  overflow-y: auto;
-  color: #000;
+  background: #e9e6f1;
+  color: #000000;
+  position: relative;
 }
 
-/* Fullscreen Background Video */
-.background-video {
+/* -------------------- */
+/* background image     */
+/* -------------------- */
+
+.background-gif {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
-  z-index: -2;
-  pointer-events: none;
+  background: url("garden.jpg") center/cover no-repeat, pink;
+  opacity: 1;
+  z-index: 0;
 }
 
-/* Header Styles */
+/* pearly overlay above the image but below content */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,0.35),
+    rgba(240,230,255,0.15)
+  );
+  z-index: 1;
+}
+
+/* all actual content sits over bg + overlay */
+header, main, footer {
+  position: relative;
+  z-index: 2;
+}
+
+/* -------------------- */
+/* header / typography  */
+/* -------------------- */
+
+header {
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+header h1, header h2, header h3,
+.section-heading {
+  color: #000000;
+  letter-spacing: 0.04em;
+}
+
 header h1 {
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 42px;
   text-align: center;
+  font-size: 50px;
   font-weight: 400;
-}
-
-header h2, header h3 {
-  text-align: center;
-  font-family: "Pixelify Sans", sans-serif;
+  margin: 0 0 6px;
 }
 
 header h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
   font-family: "Roboto Mono", monospace;
+  font-size: 18px;
+  margin: 0 0 4px;
 }
 
 header h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
   font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  margin: 0;
 }
 
-/* Nav (if used) */
-nav {
+
+.section-heading {
+  text-align: center;
   font-family: "Pixelify Sans", sans-serif;
-  font-size: 42px;
-  text-align: center;
+  font-size: 24px;
   font-weight: 400;
+  
 }
 
-/* Projects Section */
-#projects {
-  padding: 40px;
-  text-align: center;
+/* -------------------- */
+/* glassmorphism cards  */
+/* -------------------- */
+
+.about-card,
+.project-card,
+.contact-card,
+.work-card,
+.page-card {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 22px;
+  backdrop-filter: blur(14px) saturate(130%);
+  -webkit-backdrop-filter: blur(14px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 16px 40px rgba(120, 110, 160, 0.25);
+  color: #000000;
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-#projects h2 {
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 36px;
-  margin-bottom: 20px;
-  font-weight: 400;
+.about-card:hover,
+.project-card:hover,
+.contact-card:hover,
+.work-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 55px rgba(120, 110, 160, 0.35);
 }
 
-.project-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); 
-  gap: 10px; 
-  margin: 20px 0;
-}
-
-.project-card {
-  background-color: #fefefe;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-  text-align: center;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-.project-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-}
-
-.project-card h3 {
-  font-family: "Roboto Mono", monospace;
-  font-size: 1.2rem;
-  margin-top: 10px;
-  color: #333;
-}
-
-/* About Section */
-.about-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+/* layout for index page cards */
+.about-card,
+.contact-card,
+.work-card {
+  max-width: 900px;
   margin: 40px auto;
-  max-width: 650px;
-  transition: transform 0.2s ease;
-  text-align: center;
+  padding: 24px 28px;
 }
 
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
+/* -------------------- */
+/* about section        */
+/* -------------------- */
 
 .about-card-inner {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .about-image {
-  width: 120px;
-  height: 120px;
+  border-radius: 90%;
+  border: 0px solid rgba(255,255,255,0.9);
+  box-shadow: 0 10px 28px rgba(120,110,160,0.25);
+  width: 150px;
+  height: 150px;
   object-fit: cover;
-  border-radius: 10px;
-  flex-shrink: 0;
 }
 
 .about-text {
@@ -136,80 +156,181 @@ nav {
   text-align: left;
 }
 
-.about-text h2 {
-  font-family: "Pixelify Sans", sans-serif;
-  font-size: 1.3rem;
+.about-text p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #000000;
+}
+
+/* -------------------- */
+/* projects section     */
+/* -------------------- */
+
+#projects {
+  max-width: 1100px;
+  margin: 40px auto 60px;
+  padding: 0 20px;
+
+}
+
+#projects > .section-heading {
+  text-align: center;
+  margin-bottom: 16px;
+   font-size: 2.5rem;
+}
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.project-card {
+  padding: 16px 16px 20px;
+  text-align: left;
+  color: #000000;
+}
+
+.project-card a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(120,110,160,0.25);
   margin-bottom: 10px;
 }
 
-.about-text p {
-  font-size: 0.95rem;
-  line-height: 1.5;
+.project-card h3 {
   margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
 }
 
-/* Contact Section */
-.contact-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin: 40px auto;
-  max-width: 500px;
-  text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.contact-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
-}
+/* -------------------- */
+/* contact section      */
+/* -------------------- */
 
 .contact-info p {
-  margin: 10px 0;
+  margin: 8px 0;
+  font-size: 0.9rem;
+  color: #000000;
+}
+
+/* -------------------- */
+/* work experience      */
+/* -------------------- */
+
+.work-card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.work-card p {
+  margin: 16px 0 0;
+  color: #000000;
+}
+
+/* -------------------- */
+/* project page layout  */
+/* -------------------- */
+
+.page-card {
+  max-width: 900px;
+  margin: 40px auto 60px;
+  padding: 28px 28px 40px;
+  text-align: center;
+}
+
+.page-section {
+  margin-bottom: 32px;
+}
+
+.page-section h2 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.page-section h3 {
+  font-family: "Roboto Mono", monospace;
   font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 10px auto 0;
 }
 
-.contact-info a {
-  color: rgb(8, 54, 135);
+.page-image-row {
+  margin-top: 16px;
+}
+
+.page-image-row img {
+  max-width: 400px;
+  width: 100%;
+  margin: 8px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(120,110,160,0.25);
+}
+
+.page-card iframe {
+  max-width: 100%;
+  border-radius: 16px;
+  border: none;
+  box-shadow: 0 10px 30px rgba(120,110,160,0.25);
+}
+
+.page-back-link {
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.page-back-link a {
+  font-family: "Pixelify Sans", sans-serif;
   text-decoration: none;
-  font-weight: bold;
 }
 
-.contact-info a:hover {
+.page-back-link a:hover {
   text-decoration: underline;
 }
 
-/* Work Experience Section */
-.work-card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  margin: 40px auto;
-  max-width: 500px;
-  text-align: center;
-  transition: transform 0.2s ease;
+/* -------------------- */ 
+/* links & footer       */
+/* -------------------- */
+
+a {
+  color: #000000;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+a:hover {
+  text-decoration: underline;
 }
 
-/* Footer */
 footer {
   text-align: center;
-  font-family: "Roboto Mono", monospace;
-  padding: 20px;
-  color: #f074cd;
+  padding: 30px 0 40px;
+  color: #000000;
+  font-size: 0.8rem;
 }
 
-
-.about-image {
-  border-radius: 50%;       
-  border: 5px solid #ffffff;    
-  object-fit: cover;        
-  width: 150px;              
-  height: 150px;           
+/* --- Force everything black globally just in case --- */
+body,
+header h1,
+header h2,
+header h3,
+.section-heading,
+.about-card,
+.project-card,
+.contact-card,
+.work-card,
+footer {
+  color: #000000 !important;
 }

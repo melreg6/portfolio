@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Autotuning Framework for Molecular Dynamics</title>
+
+  <!-- Global Styles + Fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- background layer -->
+  <div class="background-gif"></div>
+
+  <header>
+    <h1>%% Autotuning Framework for Molecular Dynamics %%</h1>
+  </header>
+
+  <main>
+    <div class="page-card">
+
+      <!-- Back link -->
+      <div class="page-back-link">
+        <a href="index.html">&larr; Back to Main</a>
+      </div>
+
+      <!-- Overview -->
+      <section class="page-section">
+        <h2>Project Overview</h2>
+        <h3>
+          This ongoing senior design project develops an autotuning framework that automatically identifies the most
+          performant Molecular Dynamics (MD) algorithm for a user’s hardware. Instead of manually tuning code for each
+          CPU or GPU platform, the framework benchmarks algorithm–hardware mappings at runtime and selects the fastest one.
+          Our goal is to democratize high-performance MD simulation and reduce the barrier to scalable scientific computing.
+        </h3>
+      </section>
+
+      <section class="page-section">
+      <h2 style="text-align:center;">Force Visualization</h2>
+
+      <div style="display:flex; justify-content:center; margin-top:10px;">
+        <video width="600" controls>
+          <source src="porfolio_photos/EC463/Forces(XYZ)N_64.mov" type="video/quicktime">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+  <p style="text-align:center; font-size:0.9em; margin-top:10px;">
+    Visualization of Lennard-Jones interactions for <strong>64 randomly generated particles</strong>
+    used to validate simulation correctness and stability.
+  </p>
+</section>
+
+
+      <!-- Contributions -->
+      <section class="page-section">
+        <h2>My Contributions</h2>
+        <h3>
+          – Designed and implemented a reusable MD simulation framework used across all algorithm implementations so far.<br>
+          – Served as <strong>Project Lead (Sept–Oct 2025)</strong> coordinating system design, benchmarking, and roadmap planning.<br>
+          – Supported CPU & GPU implementations of Cell-List and Neighbor-List-based MD with tunable variants.<br>
+          – Built tooling to profile how algorithm–hardware mappings influence runtime behavior.<br>
+          – Project continues through <strong>May 2026</strong> for senior design.
+        </h3>
+      </section>
+
+      <!-- Architecture Diagram -->
+      <section class="page-section">
+        <h2>System Architecture</h2>
+        <h3>
+          The autotuner runs short MD samples across multiple algorithms and records performance in a timing bank.
+          The fastest algorithm is then used for the full simulation.
+        </h3>
+
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC463/Dynamix%20II%20MVP.jpg"
+               alt="High level architecture of MD autotuning system">
+        </div>
+      </section>
+
+      <!-- Product in Use -->
+      <section class="page-section">
+        <h2>Product in Use</h2>
+        <h3>
+          One command launches autotuning, prints performance comparisons, and runs the full simulation using the fastest method.
+        </h3>
+
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC463/visual.png"
+               alt="Visualization of autotuning results and simulation output">
+        </div>
+      </section>
+
+      <!-- Validation -->
+      <section class="page-section">
+        <h2>Validation & Physical Accuracy</h2>
+        <h3>
+          To confirm numerical correctness, the framework verifies total-energy drift and confirms algorithm agreement.
+          Our runs show near-zero drift and stable dynamics.
+        </h3>
+
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC463/valid.png"
+               alt="Energy conservation test output">
+        </div>
+      </section>
+
+      <!-- Energy Plots -->
+      <section class="page-section">
+        <h2>Energy Behavior Over Time</h2>
+        <h3>
+          Energy plots confirm that the system conserves total energy over long simulations — a key correctness metric in MD.
+        </h3>
+
+        <div class="page-image-row">
+          <img src="porfolio_photos/EC463/energy_plots.png"
+               alt="Energy stability plots over simulation">
+        </div>
+      </section>
+
+      
+      <!-- Team -->
+      <section class="page-section">
+        <h2>Project Team & Faculty Mentors</h2>
+        <h3>
+          Melissa Regalado • Daniel Gergeus • Alexander Hack • Eugene Seoh • Cynthia Young
+        </h3>
+      </section>
+
+      <!-- Status -->
+      <section class="page-section">
+        <h2>Project Status</h2>
+        <h3>
+          This is an <strong>active and ongoing project</strong> expected to complete in <strong>May 2026</strong>
+          as part of the EC463 senior design sequence at Boston University.
+        </h3>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Melissa Regalado</p>
+  </footer>
+
+</body>
+</html>
